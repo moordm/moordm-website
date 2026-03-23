@@ -1,0 +1,24 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Screenshots & reference images
+screencapture-*.jpg
+Screenshot-*.png
+
+# Skill files
+*.skill
+
+# Run logs
+runs/
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Node
+node_modules/
