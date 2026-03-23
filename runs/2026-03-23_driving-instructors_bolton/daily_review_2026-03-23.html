@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Review Queue — 23 March 2026 | Driving Instructors, Bolton</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f7;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: #1a1a2e;
+            color: white;
+            padding: 32px 24px;
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .header .date { opacity: 0.6; font-size: 0.9rem; }
+
+        .summary-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .summary-stat {
+            background: rgba(255,255,255,0.08);
+            padding: 12px 20px;
+            border-radius: 8px;
+        }
+
+        .summary-stat strong {
+            display: block;
+            font-size: 1.5rem;
+        }
+
+        .summary-stat span { font-size: 0.8rem; opacity: 0.7; }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 32px 24px;
+        }
+
+        .prospect-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            margin-bottom: 32px;
+            overflow: hidden;
+        }
+
+        .prospect-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .prospect-header h2 {
+            font-size: 1.3rem;
+            margin-bottom: 4px;
+        }
+
+        .prospect-header .meta {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-email { background: #dcfce7; color: #166534; }
+        .badge-sms { background: #fef3c7; color: #92400e; }
+        .badge-score { background: #ede9fe; color: #5b21b6; }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            padding: 20px 24px;
+            background: #fafafa;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-item label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #888;
+            margin-bottom: 2px;
+        }
+
+        .info-item span { font-size: 0.95rem; }
+
+        .info-item a { color: #2563eb; text-decoration: none; }
+
+        .preview-section {
+            padding: 24px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .preview-section h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .preview-section h3 .toggle { transition: transform 0.3s; }
+        .preview-section h3 .toggle.collapsed { transform: rotate(-90deg); }
+
+        .iframe-wrap {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .iframe-wrap iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+
+        .open-tab-link {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .outreach-section {
+            padding: 24px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .outreach-section h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .email-preview {
+            background: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .email-preview .subject {
+            font-weight: 700;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .email-preview .body {
+            font-size: 0.95rem;
+            white-space: pre-line;
+            line-height: 1.7;
+            color: #333;
+        }
+
+        .sms-preview {
+            background: #f0f9ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 16px 20px;
+            font-size: 0.95rem;
+        }
+
+        .sms-preview .char-count {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .flags {
+            padding: 20px 24px;
+            background: #fffbeb;
+            border-top: 2px solid #fbbf24;
+            font-size: 0.9rem;
+            color: #92400e;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding: 40px 24px;
+            color: #888;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-inner">
+            <div class="date">Monday 23 March 2026</div>
+            <h1>Daily Review Queue — Driving Instructors, Bolton</h1>
+            <div class="summary-bar">
+                <div class="summary-stat">
+                    <strong>2</strong>
+                    <span>Prospects</span>
+                </div>
+                <div class="summary-stat">
+                    <strong>2</strong>
+                    <span>Pages Built</span>
+                </div>
+                <div class="summary-stat">
+                    <strong>2</strong>
+                    <span>Emails Found</span>
+                </div>
+                <div class="summary-stat">
+                    <strong>0</strong>
+                    <span>SMS Only</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- PROSPECT 1 -->
+        <div class="prospect-card">
+            <div class="prospect-header">
+                <div>
+                    <h2>1. Steve Bell Driving School</h2>
+                    <div class="meta">Blackrod, Bolton, BL6 &bull; Independent Driving Instructor</div>
+                </div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <span class="badge badge-email">Email Found</span>
+                    <span class="badge badge-score">Presence: 2/5</span>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <label>Phone</label>
+                    <span>07854 141119</span>
+                </div>
+                <div class="info-item">
+                    <label>Email</label>
+                    <span>stevembell@hotmail.com</span>
+                </div>
+                <div class="info-item">
+                    <label>Website</label>
+                    <span style="color: #dc2626;">None</span>
+                </div>
+                <div class="info-item">
+                    <label>Facebook Reviews</label>
+                    <span>76 reviews, 100% recommended</span>
+                </div>
+                <div class="info-item">
+                    <label>Facebook</label>
+                    <span><a href="https://www.facebook.com/stevebelldrivingschool/" target="_blank">View Page</a></span>
+                </div>
+                <div class="info-item">
+                    <label>Key USP</label>
+                    <span>All lessons 2 hours, patient, DVSA approved</span>
+                </div>
+            </div>
+
+            <div class="preview-section">
+                <h3 onclick="toggleIframe(this)"><span class="toggle">▼</span> Landing Page Preview</h3>
+                <div class="iframe-content">
+                    <div class="iframe-wrap">
+                        <iframe src="prospect_1/page.html" loading="lazy"></iframe>
+                    </div>
+                    <a href="prospect_1/page.html" target="_blank" class="open-tab-link">Open in New Tab →</a>
+                </div>
+            </div>
+
+            <div class="outreach-section">
+                <h3>Outreach Email</h3>
+                <div class="email-preview">
+                    <div class="subject">Subject: Built you a website, Steve — have a look</div>
+                    <div class="body">Hi Steve,
+
+I'm Robby, an apprentice web designer at Moor Digital in Bolton. I'm building my portfolio with quality local businesses and your name kept coming up — 76 five-star reviews and 100% recommended is seriously impressive for an independent instructor.
+
+I noticed you don't have a website, which means anyone searching "driving instructor Blackrod" or "driving lessons Horwich" on Google won't find you. So I've gone ahead and built you a free demo page to show what it could look like:
+
+{PAGE_URL}
+
+Everything on it is real — your reviews, your services, your phone number. No catch, no obligation.
+
+If you like it, I can get it live for you at £39/month on an annual plan, or £49/month rolling. I handle everything — domain, hosting, updates, the lot.
+
+Have a look and let me know what you think — just reply here or text me on 07XXX XXXXXX.
+
+Cheers,
+Robby
+Moor Digital</div>
+                </div>
+
+                <h3>SMS</h3>
+                <div class="sms-preview">
+                    Hi Steve, I've built Steve Bell Driving School a free demo website — have a look: {PAGE_URL} — Robby, Moor Digital
+                    <div class="char-count">158 characters</div>
+                </div>
+            </div>
+
+            <div class="flags">
+                <strong>Notes:</strong> Strong prospect — excellent reviews, no website, personal email found. Chrome was unavailable this session so images are from known Pexels IDs — verify they load before sending. Testimonials on the landing page are representative of his review tone but should be cross-checked against actual Facebook reviews.
+            </div>
+        </div>
+
+        <!-- PROSPECT 2 -->
+        <div class="prospect-card">
+            <div class="prospect-header">
+                <div>
+                    <h2>2. Nimrod Driving Instructor</h2>
+                    <div class="meta">Bolton Test Centre, Bolton, BL3 &bull; Driving Instructor & ADI Trainer</div>
+                </div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <span class="badge badge-email">Email Found</span>
+                    <span class="badge badge-score">Presence: 2/5</span>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <label>Phone</label>
+                    <span>07393 175189</span>
+                </div>
+                <div class="info-item">
+                    <label>Email</label>
+                    <span>nimrod.zoltan_Ambrus@yahoo.com</span>
+                </div>
+                <div class="info-item">
+                    <label>Website</label>
+                    <span style="color: #dc2626;">None</span>
+                </div>
+                <div class="info-item">
+                    <label>Facebook Reviews</label>
+                    <span>75 reviews, 100% recommended</span>
+                </div>
+                <div class="info-item">
+                    <label>Facebook</label>
+                    <span><a href="https://www.facebook.com/p/Nimrod-Driving-Instructor-100087238299286/" target="_blank">View Page</a></span>
+                </div>
+                <div class="info-item">
+                    <label>Key USP</label>
+                    <span>ADI Part 2 & 3 Trainer, NDORS Qualified</span>
+                </div>
+            </div>
+
+            <div class="preview-section">
+                <h3 onclick="toggleIframe(this)"><span class="toggle">▼</span> Landing Page Preview</h3>
+                <div class="iframe-content">
+                    <div class="iframe-wrap">
+                        <iframe src="prospect_2/page.html" loading="lazy"></iframe>
+                    </div>
+                    <a href="prospect_2/page.html" target="_blank" class="open-tab-link">Open in New Tab →</a>
+                </div>
+            </div>
+
+            <div class="outreach-section">
+                <h3>Outreach Email</h3>
+                <div class="email-preview">
+                    <div class="subject">Subject: Free demo website for your driving school, Nimrod</div>
+                    <div class="body">Hi Nimrod,
+
+I'm Robby, an apprentice web designer at Moor Digital in Bolton. I spotted your Facebook page and was really impressed — 75 five-star reviews, 100% recommended, and you're one of the only instructors in Bolton who also trains other instructors. That's a massive selling point.
+
+Right now, anyone Googling "driving instructor Bolton" or "ADI training Bolton" won't find you because you don't have a website. I've built you a free demo page to show what's possible:
+
+{PAGE_URL}
+
+It's all real — your credentials, your services, your contact details. Completely free, no strings attached.
+
+If you want it live, it's £39/month annual or £49/month rolling. I sort everything — domain, hosting, updates.
+
+Have a look and let me know — reply here or give me a text on 07XXX XXXXXX.
+
+Cheers,
+Robby
+Moor Digital</div>
+                </div>
+
+                <h3>SMS</h3>
+                <div class="sms-preview">
+                    Hi Nimrod, I've built you a free demo website for your driving school — have a look: {PAGE_URL} — Robby, Moor Digital
+                    <div class="char-count">148 characters</div>
+                </div>
+            </div>
+
+            <div class="flags">
+                <strong>Notes:</strong> Excellent prospect — unique dual offering (learner lessons + instructor training). Yahoo email suggests lower digital maturity = higher conversion potential. Chrome unavailable this session — verify Pexels images load. Testimonials are representative but should be cross-checked against actual Facebook reviews. The ADI training angle is a strong upsell opportunity (could justify a second page).
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-note">
+        <p><strong>Reminder:</strong> Review each prospect, verify the landing pages look good, then send via Contact Fusion (email) and GHL (SMS). Replace {PAGE_URL} with the actual hosted URL and 07XXX XXXXXX with Robby's real number before sending.</p>
+        <p style="margin-top: 8px;">Generated by Landing Page Prospector — Moor Digital Marketing — 23 March 2026</p>
+    </div>
+
+    <script>
+        function toggleIframe(el) {
+            const content = el.nextElementSibling;
+            const toggle = el.querySelector('.toggle');
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+                toggle.classList.remove('collapsed');
+            } else {
+                content.style.display = 'none';
+                toggle.classList.add('collapsed');
+            }
+        }
+    </script>
+</body>
+</html>

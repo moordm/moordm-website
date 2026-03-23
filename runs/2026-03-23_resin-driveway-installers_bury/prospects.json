@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "business_name": "Impressed Concrete",
+    "category": "Concrete contractor / Driveway installer",
+    "address": "Europa House, Barcroft St, Bury, Manchester BL9 5BT",
+    "phone": "0800 233 5041",
+    "phone_secondary": "0800 246 5458",
+    "website": null,
+    "website_notes": "Has a website at impressed-driveways.co.uk but NOT linked to their GBP. GBP is unclaimed.",
+    "website_quality": "None on GBP - separate site exists but not connected",
+    "google_rating": 4.7,
+    "google_reviews": 24,
+    "google_maps_url": "https://www.google.com/maps/place/Impressed+Concrete/@53.597898,-2.2943212,17z/",
+    "gbp_claimed": false,
+    "email": "sales@impressed-concrete.co.uk",
+    "email_source": "impressed-driveways.co.uk contact page",
+    "facebook_url": null,
+    "online_presence_score": 2,
+    "trust_signals": "25 years of experience, satisfaction guaranteed, free no-obligation quotes",
+    "services": "Impressed/patterned concrete driveways, paths, patios, steps"
+  },
+  {
+    "id": 2,
+    "business_name": "The Paving Doctor",
+    "category": "Paving contractor / Driveway installer",
+    "address": "63 Craven St, Bury BL9 7PP",
+    "phone": "07779 624407",
+    "phone_secondary": "0161 761 5530",
+    "website": "https://the-paving-doctor.ueniweb.com/",
+    "website_quality": "Low quality - free ueniweb.com builder domain",
+    "google_rating": 5.0,
+    "google_reviews": 9,
+    "google_maps_url": "https://www.google.com/maps/place/The+Paving+Doctor/@53.5981623,-2.272054,17z/",
+    "gbp_claimed": true,
+    "email": "[email protected]",
+    "email_source": "construction.co.uk directory listing",
+    "facebook_url": null,
+    "online_presence_score": 2,
+    "trust_signals": "5-star Google rating, Resiblock registered installer",
+    "services": "Block paving for driveways and patios, porcelain, Indian stone, remedial works"
+  }
+]

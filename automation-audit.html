@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Marketing Automation Audit | Moor Digital Marketing</title>
+  <meta name="description" content="Discover your automation opportunity score with our free marketing automation audit. Get a custom roadmap to scale without hiring.">
+  <meta name="canonical" content="https://moordigitalmarketing.com/automation-audit.html">
+  <meta property="og:title" content="Free Marketing Automation Audit | Moor Digital Marketing">
+  <meta property="og:description" content="Discover your automation opportunity score with our free marketing automation audit. Get a custom roadmap to scale without hiring.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://moordigitalmarketing.com/automation-audit.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ── Hero ── */
+    .audit-hero {
+      background: linear-gradient(160deg, var(--slate-900) 0%, #1a1040 50%, var(--indigo-900) 100%);
+      padding: 120px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .audit-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(255,107,74,.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .audit-hero .section-label {
+      color: var(--coral-500);
+      font-weight: 600;
+      font-size: .85rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .audit-hero .section-label::before {
+      content: '';
+      width: 28px;
+      height: 3px;
+      background: var(--coral-500);
+      border-radius: 2px;
+    }
+    .audit-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      margin: 0 0 16px;
+    }
+    .audit-hero h1 span {
+      background: linear-gradient(135deg, var(--coral-500), #FF8A65);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .audit-hero p {
+      color: var(--indigo-200);
+      font-size: 1.1rem;
+      max-width: 560px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+
+    /* ── Progress Bar ── */
+    .progress-container {
+      background: var(--white);
+      border-bottom: 1px solid var(--indigo-100);
+      padding: 24px 0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+    .progress-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .progress-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      min-width: 60px;
+    }
+    .progress-circle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--indigo-100);
+      color: var(--indigo-400);
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .4s ease;
+      border: 2px solid var(--indigo-200);
+    }
+    .progress-node.active .progress-circle {
+      background: var(--coral-500);
+      color: var(--white);
+      border-color: var(--coral-500);
+      box-shadow: 0 0 0 4px rgba(255,107,74,.2);
+    }
+    .progress-node.completed .progress-circle {
+      background: var(--success);
+      color: var(--white);
+      border-color: var(--success);
+    }
+    .progress-node-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--slate-400);
+      margin-top: 6px;
+      white-space: nowrap;
+      transition: color .3s ease;
+    }
+    .progress-node.active .progress-node-label {
+      color: var(--coral-500);
+      font-weight: 600;
+    }
+    .progress-node.completed .progress-node-label {
+      color: var(--success);
+    }
+    .progress-line {
+      flex: 1;
+      height: 3px;
+      background: var(--indigo-100);
+      margin: 0 -2px;
+      position: relative;
+      top: -10px;
+      z-index: 1;
+      transition: background .4s ease;
+    }
+    .progress-line.completed {
+      background: var(--success);
+    }
+
+    /* ── Form Section ── */
+    .audit-form-section {
+      background: var(--slate-50);
+      padding: 60px 0 80px;
+    }
+    .audit-form-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 48px;
+      max-width: 720px;
+      margin: 0 auto;
+      box-shadow: 0 4px 24px rgba(0,0,0,.06), 0 1px 3px rgba(0,0,0,.04);
+      border: 1px solid var(--indigo-100);
+    }
+
+    .form-step.step-hidden {
+      display: none;
+    }
+
+    /* Step Header */
+    .step-header {
+      margin-bottom: 36px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--indigo-100);
+    }
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--coral-500), #FF8A65);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+    .step-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--indigo-900);
+      margin: 0 0 8px;
+    }
+    .step-description {
+      color: var(--slate-500);
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Form Groups */
+    .form-group {
+      margin-bottom: 32px;
+    }
+    .form-group:last-of-type {
+      margin-bottom: 0;
+    }
+    .form-label {
+      display: block;
+      font-weight: 600;
+      color: var(--indigo-900);
+      margin-bottom: 14px;
+      font-size: 15px;
+    }
+
+    /* Option Cards (radio & checkbox) */
+    .radio-group,
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .radio-item,
+    .checkbox-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      border: 1.5px solid var(--indigo-100);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all .2s ease;
+      background: var(--white);
+    }
+    .radio-item:hover,
+    .checkbox-item:hover {
+      border-color: var(--coral-300);
+      background: rgba(255,107,74,.03);
+    }
+    .radio-item.selected,
+    .checkbox-item.selected {
+      border-color: var(--coral-500);
+      background: rgba(255,107,74,.06);
+      box-shadow: 0 0 0 3px rgba(255,107,74,.1);
+    }
+
+    .radio-item input[type="radio"],
+    .checkbox-item input[type="checkbox"] {
+      width: auto !important;
+      min-width: 16px;
+      height: 16px;
+      margin: 0 !important;
+      padding: 0 !important;
+      cursor: pointer;
+      accent-color: var(--coral-500);
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    .radio-item label,
+    .checkbox-item label {
+      cursor: pointer;
+      flex: 1;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--slate-700);
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    /* Text Inputs */
+    .form-input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px 16px;
+      border: 1.5px solid var(--indigo-200);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 15px;
+      color: var(--slate-900);
+      background: var(--white);
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: var(--coral-500);
+      box-shadow: 0 0 0 3px rgba(255,107,74,.1);
+    }
+    .form-input::placeholder {
+      color: var(--slate-400);
+    }
+
+    /* Contact form grid */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .contact-grid .form-group {
+      margin-bottom: 0;
+    }
+    .contact-grid .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    /* Buttons */
+    .form-buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 40px;
+      justify-content: space-between;
+    }
+    .btn-back {
+      background: var(--white);
+      color: var(--slate-600);
+      border: 1.5px solid var(--indigo-200);
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all .2s ease;
+      font-family: inherit;
+    }
+    .btn-back:hover {
+      background: var(--slate-50);
+      border-color: var(--slate-300);
+      color: var(--slate-800);
+    }
+    .btn-next {
+      flex: 1;
+      background: linear-gradient(135deg, var(--coral-500), #FF8A65);
+      color: var(--white);
+      border: none;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all .3s ease;
+      font-family: inherit;
+    }
+    .btn-next:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255,107,74,.35);
+    }
+    .btn-submit {
+      flex: 1;
+    }
+
+    /* Error */
+    .error-message {
+      background: #FEF2F2;
+      color: #DC2626;
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      margin-bottom: 20px;
+      display: none;
+      border: 1px solid #FECACA;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .error-message.show {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: slideDown .3s ease;
+    }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Results Screen ── */
+    .results-screen {
+      display: none;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .results-screen.show {
+      display: block;
+      animation: fadeUp .6s ease;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Score Card */
+    .score-card {
+      background: linear-gradient(160deg, var(--slate-900) 0%, #1a1040 100%);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 50px 40px;
+      text-align: center;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .score-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 30%, rgba(255,107,74,.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .score-ring {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 24px;
+      position: relative;
+    }
+    .score-ring svg {
+      width: 140px;
+      height: 140px;
+      transform: rotate(-90deg);
+    }
+    .score-ring .ring-bg {
+      fill: none;
+      stroke: rgba(255,255,255,.1);
+      stroke-width: 8;
+    }
+    .score-ring .ring-fill {
+      fill: none;
+      stroke: var(--coral-500);
+      stroke-width: 8;
+      stroke-linecap: round;
+      stroke-dasharray: 408;
+      stroke-dashoffset: 408;
+      transition: stroke-dashoffset 1.5s ease;
+    }
+    .score-ring .score-value {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .score-label {
+      font-size: 15px;
+      font-weight: 500;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .score-message {
+      font-size: 16px;
+      opacity: 0.9;
+      margin-top: 12px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    /* Recommendations */
+    .recommendations {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.05);
+      border: 1px solid var(--indigo-100);
+    }
+    .recommendations-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--indigo-900);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .recommendations-title::before {
+      content: '';
+      width: 28px;
+      height: 3px;
+      background: var(--coral-500);
+      border-radius: 2px;
+    }
+    .recommendations-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .recommendation-item {
+      background: var(--slate-50);
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      color: var(--slate-600);
+      line-height: 1.6;
+      border-left: 3px solid var(--coral-500);
+      transition: transform .2s ease;
+    }
+    .recommendation-item:hover {
+      transform: translateX(4px);
+    }
+    .recommendation-item strong {
+      color: var(--indigo-900);
+      display: block;
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+
+    /* Results CTA */
+    .results-cta {
+      background: linear-gradient(135deg, var(--indigo-900), var(--indigo-800));
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .results-cta p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+    .results-cta strong {
+      display: block;
+      font-size: 17px;
+      margin-bottom: 8px;
+      opacity: 1;
+    }
+
+    /* Results Banner */
+    .results-banner {
+      background: linear-gradient(135deg, var(--coral-500), #FF8A65);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      color: var(--white);
+    }
+    .results-banner h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+    .results-banner p {
+      font-size: 15px;
+      margin: 0 0 24px;
+      opacity: 0.95;
+    }
+    .results-banner .btn-primary {
+      background: var(--white);
+      color: var(--coral-500);
+    }
+    .results-banner .btn-primary:hover {
+      background: var(--indigo-50);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,.15);
+    }
+    .btn-new-audit {
+      background: rgba(255,255,255,.2);
+      color: var(--white);
+      padding: 10px 20px;
+      font-size: 13px;
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-top: 12px;
+      transition: all .2s ease;
+      font-family: inherit;
+    }
+    .btn-new-audit:hover {
+      background: rgba(255,255,255,.3);
+    }
+
+    /* ── Why Get Audited ── */
+    .why-section {
+      background: var(--white);
+      padding: 80px 0;
+    }
+    .why-section .section-label {
+      color: var(--coral-500);
+      font-weight: 600;
+      font-size: .85rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .why-section .section-label::before {
+      content: '';
+      width: 28px;
+      height: 3px;
+      background: var(--coral-500);
+      border-radius: 2px;
+    }
+    .why-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .why-header .section-title {
+      margin: 0 0 12px;
+    }
+    .why-header .section-subtitle {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .benefit-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .benefit-card {
+      background: var(--slate-50);
+      border: 1px solid var(--indigo-100);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      transition: all .3s ease;
+    }
+    .benefit-card:hover {
+      box-shadow: 0 12px 32px rgba(0,0,0,.08);
+      border-color: var(--coral-300);
+      transform: translateY(-4px);
+    }
+    .benefit-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--coral-500), #FF8A65);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin: 0 auto 20px;
+    }
+    .benefit-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--indigo-900);
+      margin: 0 0 10px;
+    }
+    .benefit-card p {
+      font-size: 14px;
+      color: var(--slate-500);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── CTA Banner ── */
+    .cta-banner {
+      background: linear-gradient(160deg, var(--slate-900) 0%, #1a1040 100%);
+      color: var(--white);
+      padding: 60px 0;
+      text-align: center;
+    }
+    .cta-banner h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0 0 12px;
+    }
+    .cta-banner p {
+      font-size: 1.05rem;
+      margin: 0 0 28px;
+      opacity: 0.85;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .audit-hero { padding: 100px 0 60px; }
+      .audit-form-card { padding: 28px 20px; }
+      .step-title { font-size: 1.3rem; }
+      .radio-group, .checkbox-group {
+        grid-template-columns: 1fr;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-buttons { flex-direction: column; }
+      .form-buttons .btn-back { order: 2; }
+      .form-buttons .btn-next,
+      .form-buttons .btn-submit { order: 1; }
+      .score-card { padding: 36px 24px; }
+      .score-ring { width: 120px; height: 120px; }
+      .score-ring svg { width: 120px; height: 120px; }
+      .score-ring .score-value { font-size: 40px; }
+      .progress-node-label { font-size: 10px; }
+      .progress-circle { width: 32px; height: 32px; font-size: 12px; }
+      .results-banner { padding: 30px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo"><div class="logo-icon">M</div>MOOR</a>
+      <ul class="nav-links" id="navLinks">
+        <li class="nav-dropdown"><a href="#">Services</a>
+          <div class="dropdown-menu">
+            <a href="ai-chatbots.html">AI Chatbots</a>
+            <a href="email-sms-automation.html">Email &amp; SMS Automation</a>
+            <a href="crm-pipeline.html">CRM &amp; Pipeline</a>
+            <a href="landing-pages-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="workflow-automation.html">Workflow Automation</a>
+            <a href="analytics-optimisation.html">Analytics &amp; Optimisation</a>
+          </div>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta">Let's Talk</a></li>
+      </ul>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="audit-hero">
+    <div class="container">
+      <div class="section-label">Free Assessment</div>
+      <h1>Marketing <span>Automation Audit</span></h1>
+      <p>Answer 5 quick questions to discover your automation opportunity score and get a custom roadmap to scale your business.</p>
+      <a href="#audit-form" class="btn-primary large">Start Your Free Audit</a>
+    </div>
+  </section>
+
+  <!-- Progress Bar -->
+  <div class="progress-container">
+    <div class="container">
+      <div class="progress-wrapper">
+        <div class="progress-node active" data-step="1">
+          <div class="progress-circle">1</div>
+          <div class="progress-node-label">Industry</div>
+        </div>
+        <div class="progress-line" data-line="1"></div>
+        <div class="progress-node" data-step="2">
+          <div class="progress-circle">2</div>
+          <div class="progress-node-label">Leads</div>
+        </div>
+        <div class="progress-line" data-line="2"></div>
+        <div class="progress-node" data-step="3">
+          <div class="progress-circle">3</div>
+          <div class="progress-node-label">Follow-Up</div>
+        </div>
+        <div class="progress-line" data-line="3"></div>
+        <div class="progress-node" data-step="4">
+          <div class="progress-circle">4</div>
+          <div class="progress-node-label">Tools</div>
+        </div>
+        <div class="progress-line" data-line="4"></div>
+        <div class="progress-node" data-step="5">
+          <div class="progress-circle">5</div>
+          <div class="progress-node-label">Details</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audit Form -->
+  <section class="audit-form-section" id="audit-form">
+    <div class="container">
+      <div id="errorMessage" class="error-message"></div>
+
+      <div class="audit-form-card">
+        <form id="auditForm">
+          <!-- Step 1: Industry -->
+          <div id="step-1" class="form-step">
+            <div class="step-header">
+              <div class="step-badge">Step 1 of 5</div>
+              <h2 class="step-title">Your Industry</h2>
+              <p class="step-description">Let's start by understanding your business type so we can tailor your audit.</p>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">What industry does your business operate in?</label>
+              <div class="radio-group">
+                <div class="radio-item">
+                  <input type="radio" id="ind-ecommerce" name="industry" value="E-commerce" required>
+                  <label for="ind-ecommerce">E-commerce</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="ind-services" name="industry" value="Professional Services">
+                  <label for="ind-services">Professional Services</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="ind-healthcare" name="industry" value="Healthcare">
+                  <label for="ind-healthcare">Healthcare</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="ind-realestate" name="industry" value="Real Estate">
+                  <label for="ind-realestate">Real Estate</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="ind-saas" name="industry" value="SaaS/Tech">
+                  <label for="ind-saas">SaaS / Tech</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="ind-hospitality" name="industry" value="Hospitality">
+                  <label for="ind-hospitality">Hospitality</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="ind-education" name="industry" value="Education">
+                  <label for="ind-education">Education</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="ind-other" name="industry" value="Other">
+                  <label for="ind-other">Other</label>
+                </div>
+              </div>
+            </div>
+
+            <div id="otherIndustryGroup" class="form-group" style="display: none;">
+              <label class="form-label">Please specify:</label>
+              <input type="text" id="otherIndustryText" name="otherIndustry" class="form-input" placeholder="Your industry">
+            </div>
+
+            <div class="form-buttons">
+              <span></span>
+              <button type="button" class="btn-next" onclick="nextStep(1)">Next Step</button>
+            </div>
+          </div>
+
+          <!-- Step 2: Lead Generation -->
+          <div id="step-2" class="form-step step-hidden">
+            <div class="step-header">
+              <div class="step-badge">Step 2 of 5</div>
+              <h2 class="step-title">Lead Generation</h2>
+              <p class="step-description">How do you currently acquire and manage new leads?</p>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">How do you currently capture leads? (select all that apply)</label>
+              <div class="checkbox-group">
+                <div class="checkbox-item">
+                  <input type="checkbox" id="lead-forms" name="leadChannels" value="Website forms">
+                  <label for="lead-forms">Website forms</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="lead-social" name="leadChannels" value="Social media">
+                  <label for="lead-social">Social media</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="lead-ads" name="leadChannels" value="Paid ads">
+                  <label for="lead-ads">Paid ads</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="lead-referrals" name="leadChannels" value="Referrals">
+                  <label for="lead-referrals">Referrals</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="lead-cold" name="leadChannels" value="Cold outreach">
+                  <label for="lead-cold">Cold outreach</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="lead-events" name="leadChannels" value="Events">
+                  <label for="lead-events">Events</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="lead-phone" name="leadChannels" value="Phone calls">
+                  <label for="lead-phone">Phone calls</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="lead-other" name="leadChannels" value="Other">
+                  <label for="lead-other">Other</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">How many leads do you get per month?</label>
+              <div class="radio-group">
+                <div class="radio-item">
+                  <input type="radio" id="leads-under50" name="monthlyLeads" value="Under 50" required>
+                  <label for="leads-under50">Under 50</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="leads-50-100" name="monthlyLeads" value="50-100">
+                  <label for="leads-50-100">50 - 100</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="leads-100-500" name="monthlyLeads" value="100-500">
+                  <label for="leads-100-500">100 - 500</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="leads-500plus" name="monthlyLeads" value="500+">
+                  <label for="leads-500plus">500+</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-buttons">
+              <button type="button" class="btn-back" onclick="prevStep(2)">Back</button>
+              <button type="button" class="btn-next" onclick="nextStep(2)">Next Step</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Follow-Up Process -->
+          <div id="step-3" class="form-step step-hidden">
+            <div class="step-header">
+              <div class="step-badge">Step 3 of 5</div>
+              <h2 class="step-title">Follow-Up Process</h2>
+              <p class="step-description">How do you nurture and follow up with leads?</p>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">How do you follow up with new leads? (select all that apply)</label>
+              <div class="checkbox-group">
+                <div class="checkbox-item">
+                  <input type="checkbox" id="followup-email" name="followupMethods" value="Manual email">
+                  <label for="followup-email">Manual email</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="followup-phone" name="followupMethods" value="Phone call">
+                  <label for="followup-phone">Phone call</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="followup-sms" name="followupMethods" value="SMS">
+                  <label for="followup-sms">SMS</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="followup-auto" name="followupMethods" value="Automated email sequence">
+                  <label for="followup-auto">Automated email sequence</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="followup-crm" name="followupMethods" value="CRM task">
+                  <label for="followup-crm">CRM task</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="followup-dm" name="followupMethods" value="Social media DM">
+                  <label for="followup-dm">Social media DM</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="followup-none" name="followupMethods" value="No consistent process">
+                  <label for="followup-none">No consistent process</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Average time to first response?</label>
+              <div class="radio-group">
+                <div class="radio-item">
+                  <input type="radio" id="response-5min" name="responseTime" value="Under 5 mins" required>
+                  <label for="response-5min">Under 5 mins</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="response-30min" name="responseTime" value="5-30 mins">
+                  <label for="response-30min">5 - 30 mins</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="response-4hours" name="responseTime" value="1-4 hours">
+                  <label for="response-4hours">1 - 4 hours</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="response-sameday" name="responseTime" value="Same day">
+                  <label for="response-sameday">Same day</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="response-later" name="responseTime" value="Next day or later">
+                  <label for="response-later">Next day or later</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-buttons">
+              <button type="button" class="btn-back" onclick="prevStep(3)">Back</button>
+              <button type="button" class="btn-next" onclick="nextStep(3)">Next Step</button>
+            </div>
+          </div>
+
+          <!-- Step 4: Current Tools -->
+          <div id="step-4" class="form-step step-hidden">
+            <div class="step-header">
+              <div class="step-badge">Step 4 of 5</div>
+              <h2 class="step-title">Current Tools &amp; Pain Points</h2>
+              <p class="step-description">What's your current tech stack and biggest challenge?</p>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">What tools do you currently use? (select all that apply)</label>
+              <div class="checkbox-group">
+                <div class="checkbox-item">
+                  <input type="checkbox" id="tool-email" name="currentTools" value="Email platform (Mailchimp etc)">
+                  <label for="tool-email">Email platform (Mailchimp etc)</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="tool-crm" name="currentTools" value="CRM (HubSpot, Salesforce etc)">
+                  <label for="tool-crm">CRM (HubSpot, Salesforce etc)</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="tool-ghl" name="currentTools" value="GoHighLevel">
+                  <label for="tool-ghl">GoHighLevel</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="tool-social" name="currentTools" value="Social scheduling tool">
+                  <label for="tool-social">Social scheduling tool</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="tool-landing" name="currentTools" value="Landing page builder">
+                  <label for="tool-landing">Landing page builder</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="tool-chatbot" name="currentTools" value="Chatbot">
+                  <label for="tool-chatbot">Chatbot</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="tool-sms" name="currentTools" value="SMS platform">
+                  <label for="tool-sms">SMS platform</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="tool-sheets" name="currentTools" value="Spreadsheets/manual tracking">
+                  <label for="tool-sheets">Spreadsheets / manual tracking</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="tool-none" name="currentTools" value="None of these">
+                  <label for="tool-none">None of these</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">What's your biggest pain point right now?</label>
+              <div class="radio-group">
+                <div class="radio-item">
+                  <input type="radio" id="pain-manual" name="painPoint" value="Too many manual tasks" required>
+                  <label for="pain-manual">Too many manual tasks</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="pain-falling" name="painPoint" value="Leads falling through cracks">
+                  <label for="pain-falling">Leads falling through cracks</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="pain-inconsistent" name="painPoint" value="Inconsistent follow-up">
+                  <label for="pain-inconsistent">Inconsistent follow-up</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="pain-visibility" name="painPoint" value="No visibility into pipeline">
+                  <label for="pain-visibility">No visibility into pipeline</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="pain-scale" name="painPoint" value="Can't scale without hiring">
+                  <label for="pain-scale">Can't scale without hiring</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="pain-unknown" name="painPoint" value="Don't know what's working">
+                  <label for="pain-unknown">Don't know what's working</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-buttons">
+              <button type="button" class="btn-back" onclick="prevStep(4)">Back</button>
+              <button type="button" class="btn-next" onclick="nextStep(4)">Next Step</button>
+            </div>
+          </div>
+
+          <!-- Step 5: Contact Details -->
+          <div id="step-5" class="form-step step-hidden">
+            <div class="step-header">
+              <div class="step-badge">Step 5 of 5</div>
+              <h2 class="step-title">Get Your Free Audit Report</h2>
+              <p class="step-description">Enter your details to receive your personalised automation audit.</p>
+            </div>
+
+            <div class="contact-grid">
+              <div class="form-group">
+                <label class="form-label">First Name *</label>
+                <input type="text" name="firstName" class="form-input" placeholder="John" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name *</label>
+                <input type="text" name="lastName" class="form-input" placeholder="Smith" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email Address *</label>
+                <input type="email" name="email" class="form-input" placeholder="john@company.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone Number *</label>
+                <input type="tel" name="phone" class="form-input" placeholder="+44 7700 900000" required>
+              </div>
+              <div class="form-group full-width">
+                <label class="form-label">Business Name *</label>
+                <input type="text" name="businessName" class="form-input" placeholder="Your Company" required>
+              </div>
+              <div class="form-group full-width">
+                <label class="form-label">Website URL</label>
+                <input type="url" name="website" class="form-input" placeholder="https://yourcompany.com">
+              </div>
+            </div>
+
+            <div class="form-buttons">
+              <button type="button" class="btn-back" onclick="prevStep(5)">Back</button>
+              <button type="submit" class="btn-next btn-submit">Get My Free Audit</button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Results Screen -->
+        <div id="formSuccess" class="results-screen">
+          <div class="score-card">
+            <div class="score-ring">
+              <svg viewBox="0 0 140 140">
+                <circle class="ring-bg" cx="70" cy="70" r="65"/>
+                <circle class="ring-fill" id="scoreRing" cx="70" cy="70" r="65"/>
+              </svg>
+              <div class="score-value" id="scoreNumber">0</div>
+            </div>
+            <div class="score-label">Automation Opportunity Score</div>
+            <div class="score-message" id="scoreMessage"></div>
+          </div>
+
+          <div class="recommendations">
+            <div class="recommendations-title">Your Top Recommendations</div>
+            <div class="recommendations-list" id="recommendationsList"></div>
+          </div>
+
+          <div class="results-cta">
+            <p><strong>We'll email your full personalised audit report within 24 hours.</strong></p>
+            <p>This detailed report includes specific automation opportunities, ROI projections, and a step-by-step implementation roadmap.</p>
+          </div>
+
+          <div class="results-banner">
+            <h2>Ready to Get Started?</h2>
+            <p>Let's discuss how we can automate your business and free up your team.</p>
+            <a href="booking.html" class="btn-primary">Book Your Strategy Call</a><br>
+            <button type="button" class="btn-new-audit" onclick="restartAudit()">Take Audit Again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Get Audited Section -->
+  <section class="why-section">
+    <div class="container">
+      <div class="why-header">
+        <div class="section-label">Why It Matters</div>
+        <h2 class="section-title">Why Get Audited?</h2>
+        <p class="section-subtitle">Understand where your biggest automation opportunities lie.</p>
+      </div>
+
+      <div class="benefit-cards">
+        <div class="benefit-card">
+          <div class="benefit-icon">&#128269;</div>
+          <h3>Identify Hidden Opportunities</h3>
+          <p>Discover where you're losing time and money through manual processes and inefficiencies.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">&#128506;</div>
+          <h3>Get a Custom Automation Roadmap</h3>
+          <p>Receive a personalised implementation plan tailored to your business, not a generic template.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">&#128200;</div>
+          <h3>See Your Growth Potential</h3>
+          <p>Understand how automation can help you scale without proportional increases in team size.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center;">
+      <h2>Already know you need automation?</h2>
+      <p>Skip the audit and let's start building your custom solution.</p>
+      <a href="booking.html" class="btn-primary">Book a Call</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo" style="margin-bottom: 16px;"><div class="logo-icon">M</div>MOOR</div>
+          <p>Marketing automation agency helping businesses scale with intelligent automation.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="Twitter">&#120143;</a>
+            <a href="#" aria-label="Facebook">f</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="ai-chatbots.html">AI Chatbots</a>
+          <a href="email-sms-automation.html">Email &amp; SMS Automation</a>
+          <a href="crm-pipeline.html">CRM &amp; Pipeline</a>
+          <a href="landing-pages-funnels.html">Landing Pages &amp; Funnels</a>
+          <a href="workflow-automation.html">Workflow Automation</a>
+          <a href="analytics-optimisation.html">Analytics &amp; Optimisation</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="blog.html">Blog</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="booking.html">Book a Call</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="roi-calculator.html">ROI Calculator</a>
+          <a href="automation-audit.html">Free Audit</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Moor Digital Marketing. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Audit-specific JavaScript
+    let currentStep = 1;
+    const totalSteps = 5;
+    const WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/8OxHCYZsjPIzURqMi2pP/webhook-trigger/59578971-58c4-4c90-a2da-8e95cfd14396';
+
+    // ── Option card selection highlighting ──
+    document.querySelectorAll('.radio-item input[type="radio"]').forEach(input => {
+      input.addEventListener('change', function() {
+        // Remove .selected from siblings in the same group
+        this.closest('.radio-group').querySelectorAll('.radio-item').forEach(item => item.classList.remove('selected'));
+        this.closest('.radio-item').classList.add('selected');
+      });
+    });
+    document.querySelectorAll('.checkbox-item input[type="checkbox"]').forEach(input => {
+      input.addEventListener('change', function() {
+        this.closest('.checkbox-item').classList.toggle('selected', this.checked);
+      });
+    });
+
+    // Show/hide other industry text input
+    document.querySelectorAll('input[name="industry"]').forEach(radio => {
+      radio.addEventListener('change', function() {
+        const otherGroup = document.getElementById('otherIndustryGroup');
+        if (this.value === 'Other') {
+          otherGroup.style.display = 'block';
+          document.getElementById('otherIndustryText').required = true;
+        } else {
+          otherGroup.style.display = 'none';
+          document.getElementById('otherIndustryText').required = false;
+        }
+      });
+    });
+
+    function showStep(step) {
+      // Hide all steps
+      document.querySelectorAll('.form-step').forEach(el => {
+        el.classList.add('step-hidden');
+      });
+
+      // Show current step
+      const stepEl = document.getElementById(`step-${step}`);
+      if (stepEl) {
+        stepEl.classList.remove('step-hidden');
+      }
+
+      // Update progress nodes
+      document.querySelectorAll('.progress-node').forEach(el => {
+        const s = parseInt(el.dataset.step);
+        el.classList.remove('active', 'completed');
+        if (s === step) el.classList.add('active');
+        else if (s < step) el.classList.add('completed');
+      });
+
+      // Update progress lines
+      document.querySelectorAll('.progress-line').forEach(el => {
+        const l = parseInt(el.dataset.line);
+        el.classList.toggle('completed', l < step);
+      });
+
+      // Scroll to form
+      setTimeout(() => {
+        document.getElementById('auditForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+
+      currentStep = step;
+    }
+
+    function validateStep(step) {
+      const errorEl = document.getElementById('errorMessage');
+      errorEl.classList.remove('show');
+
+      switch(step) {
+        case 1:
+          const industry = document.querySelector('input[name="industry"]:checked');
+          if (!industry) { showError('Please select your industry.'); return false; }
+          if (industry.value === 'Other') {
+            const otherText = document.getElementById('otherIndustryText').value.trim();
+            if (!otherText) { showError('Please specify your industry.'); return false; }
+          }
+          return true;
+
+        case 2:
+          const channels = document.querySelectorAll('input[name="leadChannels"]:checked');
+          if (channels.length === 0) { showError('Please select at least one lead channel.'); return false; }
+          const leads = document.querySelector('input[name="monthlyLeads"]:checked');
+          if (!leads) { showError('Please select your monthly lead volume.'); return false; }
+          return true;
+
+        case 3:
+          const methods = document.querySelectorAll('input[name="followupMethods"]:checked');
+          if (methods.length === 0) { showError('Please select at least one follow-up method.'); return false; }
+          const response = document.querySelector('input[name="responseTime"]:checked');
+          if (!response) { showError('Please select your average response time.'); return false; }
+          return true;
+
+        case 4:
+          const pain = document.querySelector('input[name="painPoint"]:checked');
+          if (!pain) { showError('Please select your biggest pain point.'); return false; }
+          return true;
+
+        case 5:
+          const firstName = document.querySelector('input[name="firstName"]').value.trim();
+          const lastName = document.querySelector('input[name="lastName"]').value.trim();
+          const email = document.querySelector('input[name="email"]').value.trim();
+          const phone = document.querySelector('input[name="phone"]').value.trim();
+          const businessName = document.querySelector('input[name="businessName"]').value.trim();
+          if (!firstName || !lastName || !email || !phone || !businessName) {
+            showError('Please fill in all required fields.'); return false;
+          }
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) { showError('Please enter a valid email address.'); return false; }
+          return true;
+
+        default: return true;
+      }
+    }
+
+    function showError(message) {
+      const errorEl = document.getElementById('errorMessage');
+      errorEl.textContent = message;
+      errorEl.classList.add('show');
+      setTimeout(() => { errorEl.classList.remove('show'); }, 5000);
+    }
+
+    function nextStep(step) {
+      if (validateStep(step)) showStep(step + 1);
+    }
+
+    function prevStep(step) {
+      showStep(step - 1);
+    }
+
+    // Form submission
+    document.getElementById('auditForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      if (!validateStep(5)) return;
+
+      const formData = new FormData();
+
+      // Step 1
+      const industry = document.querySelector('input[name="industry"]:checked').value;
+      const otherIndustry = industry === 'Other' ? document.getElementById('otherIndustryText').value : '';
+      formData.append('industry', industry === 'Other' ? otherIndustry : industry);
+
+      // Step 2
+      const channels = Array.from(document.querySelectorAll('input[name="leadChannels"]:checked')).map(el => el.value).join(', ');
+      const monthlyLeads = document.querySelector('input[name="monthlyLeads"]:checked').value;
+      formData.append('leadChannels', channels);
+      formData.append('monthlyLeads', monthlyLeads);
+
+      // Step 3
+      const methods = Array.from(document.querySelectorAll('input[name="followupMethods"]:checked')).map(el => el.value).join(', ');
+      const responseTime = document.querySelector('input[name="responseTime"]:checked').value;
+      formData.append('followupMethods', methods);
+      formData.append('responseTime', responseTime);
+
+      // Step 4
+      const tools = Array.from(document.querySelectorAll('input[name="currentTools"]:checked')).map(el => el.value).join(', ');
+      const painPoint = document.querySelector('input[name="painPoint"]:checked').value;
+      formData.append('currentTools', tools);
+      formData.append('painPoint', painPoint);
+
+      // Step 5
+      formData.append('firstName', document.querySelector('input[name="firstName"]').value);
+      formData.append('lastName', document.querySelector('input[name="lastName"]').value);
+      formData.append('email', document.querySelector('input[name="email"]').value);
+      formData.append('phone', document.querySelector('input[name="phone"]').value);
+      formData.append('businessName', document.querySelector('input[name="businessName"]').value);
+      formData.append('website', document.querySelector('input[name="website"]').value);
+
+      const score = calculateScore(formData);
+      formData.append('automationScore', score);
+
+      try {
+        await fetch(WEBHOOK_URL, { method: 'POST', body: formData, mode: 'no-cors' });
+        showResults(score, formData);
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        showError('There was an error submitting your form. Please try again.');
+      }
+    });
+
+    function calculateScore(formData) {
+      let score = 20;
+      const responseTime = formData.get('responseTime');
+      const followupMethods = formData.get('followupMethods');
+      const currentTools = formData.get('currentTools');
+      const painPoint = formData.get('painPoint');
+      const monthlyLeads = formData.get('monthlyLeads');
+
+      if (followupMethods.includes('No consistent process')) score += 20;
+      if (responseTime === 'Same day' || responseTime === 'Next day or later' || responseTime === '1-4 hours') score += 15;
+      if (currentTools.includes('Spreadsheets/manual tracking')) score += 15;
+      if (!currentTools.includes('Chatbot')) score += 10;
+      if (!currentTools.includes('CRM') && !currentTools.includes('HubSpot') && !currentTools.includes('Salesforce') && !currentTools.includes('GoHighLevel')) score += 15;
+      if (!followupMethods.includes('Automated email sequence')) score += 10;
+      if ((monthlyLeads === '100-500' || monthlyLeads === '500+') && !followupMethods.includes('Automated email sequence')) score += 15;
+
+      const painPoints = {
+        'Too many manual tasks': 15,
+        'Leads falling through cracks': 18,
+        'Inconsistent follow-up': 16,
+        'No visibility into pipeline': 14,
+        "Can't scale without hiring": 20,
+        "Don't know what's working": 12
+      };
+      score += painPoints[painPoint] || 0;
+      return Math.min(score, 100);
+    }
+
+    function generateRecommendations(formData) {
+      const recommendations = [];
+      const responseTime = formData.get('responseTime');
+      const followupMethods = formData.get('followupMethods');
+      const currentTools = formData.get('currentTools');
+      const painPoint = formData.get('painPoint');
+
+      if (!currentTools.includes('Chatbot')) {
+        recommendations.push({ title: 'Implement AI Chatbots', description: 'Automate initial lead qualification and 24/7 customer support to reduce response time and improve conversion rates.' });
+      }
+      if (!followupMethods.includes('Automated email sequence')) {
+        recommendations.push({ title: 'Set Up Email Automation Sequences', description: 'Create automated follow-up sequences that nurture leads while you sleep, ensuring no lead falls through the cracks.' });
+      }
+      if (!currentTools.includes('CRM') && !currentTools.includes('HubSpot') && !currentTools.includes('Salesforce') && !currentTools.includes('GoHighLevel')) {
+        recommendations.push({ title: 'Deploy a CRM System', description: 'Get full visibility into your pipeline, automate task assignments, and create accountability across your team.' });
+      }
+      if (!followupMethods.includes('SMS') && (responseTime === 'Same day' || responseTime === 'Next day or later')) {
+        recommendations.push({ title: 'Add SMS Automation', description: 'Reach leads instantly with time-sensitive messages and appointment reminders that dramatically improve conversion.' });
+      }
+      if (!currentTools.includes('Landing page builder')) {
+        recommendations.push({ title: 'Build High-Converting Funnels', description: 'Create dedicated landing pages with automated follow-up workflows to maximize conversion rates from your traffic.' });
+      }
+      if (followupMethods.includes('Manual email') || painPoint === 'Too many manual tasks') {
+        recommendations.push({ title: 'Automate Your Workflows', description: 'Eliminate manual handoffs and repetitive tasks with automation that triggers actions based on customer behavior.' });
+      }
+      return recommendations.slice(0, 4);
+    }
+
+    function showResults(score, formData) {
+      const form = document.getElementById('auditForm');
+      const results = document.getElementById('formSuccess');
+
+      form.style.display = 'none';
+      results.classList.add('show');
+
+      // Animate score ring
+      const circumference = 2 * Math.PI * 65; // ~408
+      const offset = circumference - (score / 100) * circumference;
+      const ring = document.getElementById('scoreRing');
+      setTimeout(() => { ring.style.strokeDashoffset = offset; }, 100);
+
+      // Animate score number
+      let current = 0;
+      const target = score;
+      const scoreEl = document.getElementById('scoreNumber');
+      const interval = setInterval(() => {
+        current += 1;
+        scoreEl.textContent = current;
+        if (current >= target) clearInterval(interval);
+      }, 20);
+
+      // Score message
+      let scoreMessage = '';
+      if (score >= 80) scoreMessage = "You have massive automation opportunities waiting. Let's unlock significant growth.";
+      else if (score >= 60) scoreMessage = "You're leaving money on the table. Strategic automation could transform your business.";
+      else if (score >= 40) scoreMessage = "Good foundation \u2014 let's optimise your processes to scale faster.";
+      else scoreMessage = "You're doing well! Targeted automation can help you grow even faster.";
+      document.getElementById('scoreMessage').textContent = scoreMessage;
+
+      // Recommendations
+      const recommendations = generateRecommendations(formData);
+      const recList = document.getElementById('recommendationsList');
+      recList.innerHTML = '';
+      recommendations.forEach(rec => {
+        const item = document.createElement('div');
+        item.className = 'recommendation-item';
+        item.innerHTML = `<strong>${rec.title}</strong>${rec.description}`;
+        recList.appendChild(item);
+      });
+
+      // Hide progress bar
+      document.querySelector('.progress-container').style.display = 'none';
+
+      setTimeout(() => { results.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+    }
+
+    function restartAudit() {
+      document.getElementById('auditForm').reset();
+      document.getElementById('otherIndustryGroup').style.display = 'none';
+
+      // Clear all selected states
+      document.querySelectorAll('.radio-item.selected, .checkbox-item.selected').forEach(el => el.classList.remove('selected'));
+
+      document.getElementById('formSuccess').classList.remove('show');
+      document.getElementById('auditForm').style.display = 'block';
+      document.querySelector('.progress-container').style.display = 'block';
+
+      // Reset score ring
+      document.getElementById('scoreRing').style.strokeDashoffset = 408;
+
+      showStep(1);
+      document.getElementById('errorMessage').classList.remove('show');
+      document.getElementById('auditForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Initialize
+    showStep(1);
+  </script>
+</body>
+</html>

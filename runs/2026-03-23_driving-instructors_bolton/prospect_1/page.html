@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steve Bell Driving School | Driving Lessons in Blackrod, Bolton</title>
+    <meta name="description" content="DVSA-approved driving instructor in Blackrod, Bolton. 2-hour lessons, patient tuition, 76 five-star reviews. Call Steve on 07854 141119.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --green-deep: #1B4332;
+            --green-mid: #2D6A4F;
+            --cream: #FEFAE0;
+            --amber: #E9C46A;
+            --amber-hover: #D4A843;
+            --text-dark: #1a1a1a;
+            --text-light: #FEFAE0;
+            --grey-light: #f8f7f2;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 100%);
+            color: var(--text-light);
+            padding: 0;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover;
+            opacity: 0.3;
+        }
+
+        @media(min-width: 768px) {
+            .hero::before { opacity: 0.5; width: 45%; border-radius: 0 0 0 80px; }
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 24px 60px;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(233, 196, 106, 0.2);
+            border: 1px solid var(--amber);
+            color: var(--amber);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            line-height: 1.15;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 520px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--amber);
+            color: var(--green-deep);
+            padding: 16px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: background 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover { background: var(--amber-hover); transform: translateY(-2px); }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            padding: 16px 24px;
+            border: 2px solid rgba(254,250,224,0.3);
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+
+        .btn-secondary:hover { border-color: var(--amber); }
+
+        /* TRUST BAR */
+        .trust-bar {
+            background: var(--cream);
+            padding: 40px 24px;
+        }
+
+        .trust-bar-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
+            text-align: center;
+        }
+
+        .trust-item strong {
+            display: block;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.8rem;
+            color: var(--green-deep);
+        }
+
+        .trust-item span {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* SECTIONS */
+        section { padding: 80px 24px; }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--amber);
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            color: var(--green-deep);
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin-bottom: 48px;
+        }
+
+        /* PROBLEM */
+        .problem { background: var(--grey-light); }
+
+        .problem-content {
+            max-width: 700px;
+        }
+
+        .problem-content p {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        /* SERVICES */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--grey-light);
+            border-radius: 12px;
+            padding: 32px 28px;
+            border-left: 4px solid var(--amber);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+        }
+
+        .service-card h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.25rem;
+            color: var(--green-deep);
+            margin-bottom: 10px;
+        }
+
+        .service-card p { color: #555; font-size: 0.95rem; }
+
+        /* HOW IT WORKS */
+        .how-it-works { background: var(--green-deep); color: var(--cream); }
+        .how-it-works h2 { color: var(--cream); }
+        .how-it-works .section-subtitle { color: rgba(254,250,224,0.7); }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 24px;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            background: var(--amber);
+            color: var(--green-deep);
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            border-radius: 50%;
+            margin-bottom: 16px;
+        }
+
+        .step h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .step p { opacity: 0.8; font-size: 0.95rem; }
+
+        /* TESTIMONIALS */
+        .testimonials { background: var(--cream); }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        }
+
+        .testimonial-stars { color: var(--amber); font-size: 1.2rem; margin-bottom: 12px; }
+
+        .testimonial-card blockquote {
+            font-style: italic;
+            color: #444;
+            margin-bottom: 16px;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .testimonial-card cite {
+            font-style: normal;
+            font-weight: 700;
+            color: var(--green-deep);
+            font-size: 0.9rem;
+        }
+
+        /* IMAGE BREAK */
+        .image-break {
+            height: 350px;
+            background: url('https://images.pexels.com/photos/97075/pexels-photo-97075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover;
+            position: relative;
+        }
+
+        .image-break::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(27,67,50,0.3), rgba(27,67,50,0.6));
+        }
+
+        /* CONTACT */
+        .contact { background: white; }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+
+        @media(min-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .contact-info h3 {
+            font-family: 'DM Serif Display', serif;
+            color: var(--green-deep);
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+        }
+
+        .contact-info p { color: #555; margin-bottom: 12px; font-size: 1.05rem; }
+
+        .contact-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--green-deep);
+            text-decoration: none;
+            margin: 16px 0;
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--green-deep);
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--green-mid);
+        }
+
+        .form-group textarea { resize: vertical; min-height: 120px; }
+
+        /* FOOTER */
+        footer {
+            background: var(--green-deep);
+            color: var(--cream);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        footer p { opacity: 0.7; font-size: 0.9rem; margin-top: 8px; }
+        footer a { color: var(--amber); text-decoration: none; }
+
+        /* ANIMATIONS */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-badge">DVSA Approved Instructor</div>
+            <h1>Learn to Drive in Blackrod with an Instructor Who Actually Cares</h1>
+            <p>Full 2-hour lessons. Same instructor every time. 76 five-star reviews from happy learners across Bolton. Steve Bell makes nervous drivers feel confident.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn-primary">Book Your Free Consultation</a>
+                <a href="tel:07854141119" class="btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    07854 141119
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar fade-in">
+        <div class="trust-bar-inner">
+            <div class="trust-item">
+                <strong>76</strong>
+                <span>Five-Star Reviews</span>
+            </div>
+            <div class="trust-item">
+                <strong>100%</strong>
+                <span>Recommended</span>
+            </div>
+            <div class="trust-item">
+                <strong>2hr</strong>
+                <span>Full-Length Lessons</span>
+            </div>
+            <div class="trust-item">
+                <strong>DVSA</strong>
+                <span>Approved Instructor</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROBLEM -->
+    <section class="problem fade-in">
+        <div class="section-inner">
+            <div class="problem-content">
+                <div class="section-label">The Problem</div>
+                <h2>Tired of Feeling Nervous Behind the Wheel?</h2>
+                <p>Big driving schools shuffle you between different instructors. One-hour lessons barely give you time to settle in before they're over. And some instructors care more about getting through the clock than getting you through the test.</p>
+                <p>You deserve an instructor who knows your name, remembers where you left off, and never makes you feel rushed or judged. Someone local, patient, and genuinely invested in seeing you pass.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services fade-in">
+        <div class="section-inner">
+            <div class="section-label">What Steve Offers</div>
+            <h2>Driving Lessons Built Around You</h2>
+            <p class="section-subtitle">Every lesson is a full 2 hours — because real progress takes proper time behind the wheel.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Beginner Lessons</h3>
+                    <p>Starting from scratch? Steve will take you from first gear to test-ready with calm, structured tuition tailored to your pace.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Test Preparation</h3>
+                    <p>Practise the actual routes around Bolton Test Centre. Build familiarity with roundabouts, junctions, and manoeuvres you'll face on the day.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Refresher Lessons</h3>
+                    <p>Passed your test years ago but lost your confidence? Get back behind the wheel with no pressure and no judgement.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Nervous Driver Support</h3>
+                    <p>Anxiety behind the wheel is more common than you think. Steve's patient, encouraging approach helps you build confidence at your own speed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMAGE BREAK -->
+    <div class="image-break"></div>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works fade-in">
+        <div class="section-inner">
+            <div class="section-label" style="color: var(--amber);">How It Works</div>
+            <h2>Three Steps to Your Driving Licence</h2>
+            <p class="section-subtitle">No complicated packages. No long-term commitments. Just straightforward lessons with a great instructor.</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Call or Text Steve</h3>
+                    <p>Have a quick, no-pressure chat about your experience level and what you want to achieve.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Start Your Lessons</h3>
+                    <p>Full 2-hour sessions tailored to your ability. Always with Steve — never a substitute instructor.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Pass Your Test</h3>
+                    <p>Feel genuinely confident and prepared on test day. No surprises, no shortcuts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials fade-in">
+        <div class="section-inner">
+            <div class="section-label">What Learners Say</div>
+            <h2>76 Reviews. 100% Recommended.</h2>
+            <p class="section-subtitle">Don't just take our word for it — here's what Steve's students have to say.</p>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <blockquote>"Steve was so patient with me from day one. I was really nervous but he made every lesson feel relaxed. Passed first time thanks to him!"</blockquote>
+                    <cite>— Recent Learner, Blackrod</cite>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <blockquote>"The 2-hour lessons make such a difference. You actually have time to learn properly instead of just getting started and then it's over."</blockquote>
+                    <cite>— Recent Learner, Horwich</cite>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <blockquote>"I'd recommend Steve to anyone learning to drive in Bolton. He's calm, he explains things clearly, and he genuinely cares about your progress."</blockquote>
+                    <cite>— Recent Learner, Westhoughton</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact fade-in" id="contact">
+        <div class="section-inner">
+            <div class="section-label">Get in Touch</div>
+            <h2>Ready to Get on the Road?</h2>
+            <p class="section-subtitle">Send Steve a message or give him a call. No obligation, no pressure — just a friendly chat about your driving goals.</p>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Steve Directly</h3>
+                    <a href="tel:07854141119" class="contact-phone">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        07854 141119
+                    </a>
+                    <p>Call or text anytime to arrange your first lesson.</p>
+                    <p style="margin-top: 24px;"><strong>Covering:</strong> Blackrod, Horwich, Westhoughton, Lostock, Aspull, and surrounding Bolton areas.</p>
+                    <p><strong>Email:</strong> stevembell@hotmail.com</p>
+                </div>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="07xxx xxxxxx">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell Steve About Yourself</label>
+                        <textarea id="message" name="message" placeholder="E.g. I'm a complete beginner, I'm available weekends, I'm a nervous learner..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; text-align: center;">Send Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p style="font-family: 'DM Serif Display', serif; font-size: 1.3rem; opacity: 1;">Steve Bell Driving School</p>
+        <p>Blackrod, Bolton &nbsp;|&nbsp; <a href="tel:07854141119">07854 141119</a> &nbsp;|&nbsp; <a href="mailto:stevembell@hotmail.com">stevembell@hotmail.com</a></p>
+        <p style="margin-top: 16px; font-size: 0.8rem;">DVSA Approved Driving Instructor</p>
+    </footer>
+
+    <script>
+        // Scroll-triggered fade-in animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

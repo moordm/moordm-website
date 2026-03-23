@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="600" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ece8fd"/>
+      <stop offset="100%" stop-color="#fff0ec"/>
+    </linearGradient>
+    <linearGradient id="indigo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5a3ec8"/>
+      <stop offset="100%" stop-color="#7c63e0"/>
+    </linearGradient>
+    <linearGradient id="coral" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff6b4a"/>
+      <stop offset="100%" stop-color="#ff8a6e"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22c98d"/>
+      <stop offset="100%" stop-color="#2ee6a3"/>
+    </linearGradient>
+    <filter id="shadow1" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#1a1040" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shadow2" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#1a1040" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="500" rx="24" fill="url(#bg)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="500" cy="80" r="60" fill="#5a3ec8" opacity="0.06"/>
+  <circle cx="80" cy="420" r="45" fill="#ff6b4a" opacity="0.08"/>
+  <circle cx="540" cy="400" r="30" fill="#22c98d" opacity="0.08"/>
+
+  <!-- Central phone/device mockup -->
+  <g filter="url(#shadow1)">
+    <rect x="210" y="60" width="180" height="340" rx="20" fill="#ffffff"/>
+    <rect x="210" y="60" width="180" height="340" rx="20" stroke="#d4dee9" stroke-width="1"/>
+    <!-- Phone notch -->
+    <rect x="265" y="68" width="70" height="6" rx="3" fill="#edf1f6"/>
+    <!-- Screen area -->
+    <rect x="222" y="88" width="156" height="290" rx="4" fill="#f7f9fb"/>
+
+    <!-- Chat messages on phone -->
+    <!-- Bot message 1 -->
+    <rect x="230" y="100" width="110" height="32" rx="12" fill="#ece8fd"/>
+    <rect x="238" y="108" width="60" height="4" rx="2" fill="#5a3ec8" opacity="0.5"/>
+    <rect x="238" y="116" width="85" height="4" rx="2" fill="#5a3ec8" opacity="0.3"/>
+
+    <!-- User message 1 -->
+    <rect x="270" y="142" width="100" height="28" rx="12" fill="url(#indigo)"/>
+    <rect x="278" y="150" width="55" height="4" rx="2" fill="#ffffff" opacity="0.7"/>
+    <rect x="278" y="158" width="75" height="4" rx="2" fill="#ffffff" opacity="0.5"/>
+
+    <!-- Bot message 2 -->
+    <rect x="230" y="180" width="120" height="36" rx="12" fill="#ece8fd"/>
+    <rect x="238" y="188" width="70" height="4" rx="2" fill="#5a3ec8" opacity="0.5"/>
+    <rect x="238" y="196" width="95" height="4" rx="2" fill="#5a3ec8" opacity="0.3"/>
+    <rect x="238" y="204" width="50" height="4" rx="2" fill="#5a3ec8" opacity="0.3"/>
+
+    <!-- User message 2 -->
+    <rect x="280" y="226" width="90" height="28" rx="12" fill="url(#indigo)"/>
+    <rect x="288" y="234" width="50" height="4" rx="2" fill="#ffffff" opacity="0.7"/>
+    <rect x="288" y="242" width="65" height="4" rx="2" fill="#ffffff" opacity="0.5"/>
+
+    <!-- Bot message 3 with CTA -->
+    <rect x="230" y="264" width="130" height="44" rx="12" fill="#ece8fd"/>
+    <rect x="238" y="272" width="80" height="4" rx="2" fill="#5a3ec8" opacity="0.5"/>
+    <rect x="238" y="280" width="105" height="4" rx="2" fill="#5a3ec8" opacity="0.3"/>
+    <!-- Mini CTA button -->
+    <rect x="238" y="290" width="60" height="12" rx="6" fill="url(#coral)"/>
+    <rect x="246" y="294" width="35" height="4" rx="2" fill="#ffffff" opacity="0.8"/>
+
+    <!-- Typing indicator -->
+    <rect x="230" y="318" width="50" height="24" rx="12" fill="#ece8fd"/>
+    <circle cx="246" cy="330" r="3" fill="#8097b3" opacity="0.6"/>
+    <circle cx="256" cy="330" r="3" fill="#8097b3" opacity="0.4"/>
+    <circle cx="266" cy="330" r="3" fill="#8097b3" opacity="0.3"/>
+
+    <!-- Input bar -->
+    <rect x="222" y="350" width="156" height="20" rx="10" fill="#ffffff" stroke="#d4dee9" stroke-width="0.5"/>
+    <rect x="232" y="357" width="50" height="4" rx="2" fill="#adbfd4" opacity="0.4"/>
+    <circle cx="364" cy="360" r="7" fill="url(#coral)"/>
+    <!-- Send arrow -->
+    <path d="M361 360l5-3v6z" fill="#ffffff"/>
+  </g>
+
+  <!-- Floating notification card - left -->
+  <g filter="url(#shadow2)">
+    <rect x="40" y="140" width="160" height="80" rx="14" fill="#ffffff"/>
+    <!-- Notification icon -->
+    <circle cx="66" cy="168" r="16" fill="url(#green)"/>
+    <path d="M60 168l4 4 8-8" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Text -->
+    <rect x="90" y="158" width="80" height="5" rx="2.5" fill="#1a2538" opacity="0.7"/>
+    <rect x="90" y="168" width="95" height="4" rx="2" fill="#5a7192" opacity="0.4"/>
+    <rect x="90" y="177" width="60" height="4" rx="2" fill="#5a7192" opacity="0.3"/>
+    <!-- Badge -->
+    <rect x="48" y="196" width="56" height="16" rx="8" fill="#e6f9f1"/>
+    <rect x="56" y="202" width="36" height="4" rx="2" fill="#22c98d" opacity="0.7"/>
+  </g>
+
+  <!-- Floating stats card - right -->
+  <g filter="url(#shadow2)">
+    <rect x="400" y="120" width="160" height="100" rx="14" fill="#ffffff"/>
+    <!-- Chart bars -->
+    <rect x="418" y="168" width="14" height="30" rx="3" fill="#ece8fd"/>
+    <rect x="438" y="155" width="14" height="43" rx="3" fill="#c9bcf7"/>
+    <rect x="458" y="145" width="14" height="53" rx="3" fill="#7c63e0"/>
+    <rect x="478" y="135" width="14" height="63" rx="3" fill="url(#indigo)"/>
+    <rect x="498" y="125" width="14" height="73" rx="3" fill="url(#coral)"/>
+    <!-- Label -->
+    <rect x="418" y="140" width="70" height="5" rx="2.5" fill="#1a2538" opacity="0.6"/>
+    <!-- Trend arrow -->
+    <path d="M526 140l-8 12" stroke="#22c98d" stroke-width="2" stroke-linecap="round"/>
+    <path d="M526 140l-6 1 1-6z" fill="#22c98d"/>
+    <rect x="516" y="156" width="30" height="4" rx="2" fill="#22c98d" opacity="0.5"/>
+  </g>
+
+  <!-- Floating email card - bottom left -->
+  <g filter="url(#shadow2)">
+    <rect x="60" y="310" width="140" height="70" rx="14" fill="#ffffff"/>
+    <!-- Email icon -->
+    <circle cx="86" cy="338" r="16" fill="url(#coral)"/>
+    <rect x="78" y="332" width="16" height="11" rx="2" fill="#ffffff" opacity="0.8"/>
+    <path d="M78 333l8 5 8-5" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.9"/>
+    <!-- Text -->
+    <rect x="110" y="328" width="70" height="5" rx="2.5" fill="#1a2538" opacity="0.7"/>
+    <rect x="110" y="338" width="75" height="4" rx="2" fill="#5a7192" opacity="0.4"/>
+    <rect x="110" y="347" width="50" height="4" rx="2" fill="#5a7192" opacity="0.3"/>
+    <!-- Badge -->
+    <rect x="68" y="360" width="44" height="14" rx="7" fill="#fff0ec"/>
+    <rect x="76" y="365" width="24" height="4" rx="2" fill="#ff6b4a" opacity="0.6"/>
+  </g>
+
+  <!-- Floating automation card - bottom right -->
+  <g filter="url(#shadow2)">
+    <rect x="400" y="300" width="160" height="80" rx="14" fill="#ffffff"/>
+    <!-- Gear/automation icon -->
+    <circle cx="426" cy="332" r="16" fill="url(#indigo)"/>
+    <circle cx="426" cy="332" r="6" stroke="#ffffff" stroke-width="1.5" fill="none"/>
+    <g stroke="#ffffff" stroke-width="1.5" stroke-linecap="round">
+      <line x1="426" y1="320" x2="426" y2="324"/>
+      <line x1="426" y1="340" x2="426" y2="344"/>
+      <line x1="414" y1="332" x2="418" y2="332"/>
+      <line x1="434" y1="332" x2="438" y2="332"/>
+    </g>
+    <!-- Text -->
+    <rect x="450" y="324" width="90" height="5" rx="2.5" fill="#1a2538" opacity="0.7"/>
+    <rect x="450" y="334" width="75" height="4" rx="2" fill="#5a7192" opacity="0.4"/>
+    <rect x="450" y="343" width="55" height="4" rx="2" fill="#5a7192" opacity="0.3"/>
+    <!-- Progress bar -->
+    <rect x="414" y="358" width="130" height="6" rx="3" fill="#ece8fd"/>
+    <rect x="414" y="358" width="95" height="6" rx="3" fill="url(#indigo)"/>
+  </g>
+
+  <!-- Connection lines (dotted) -->
+  <line x1="200" y1="180" x2="222" y2="200" stroke="#5a3ec8" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.3"/>
+  <line x1="390" y1="170" x2="400" y2="160" stroke="#5a3ec8" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.3"/>
+  <line x1="200" y1="340" x2="222" y2="320" stroke="#ff6b4a" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.3"/>
+  <line x1="390" y1="340" x2="400" y2="330" stroke="#5a3ec8" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.3"/>
+</svg>

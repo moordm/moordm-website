@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressed Concrete | Stunning Driveways in Bury | 25 Years Experience</title>
+    <meta name="description" content="Professional concrete driveway installation in Bury, Manchester. 25 years experience, 4.7★ Google rating. Free no-obligation quotes. Call 0800 233 5041.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #1B2D45;
+            --gold: #D4A843;
+            --cream: #F5F5F0;
+            --charcoal: #333333;
+            --white: #ffffff;
+            --light-navy: #243B56;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            color: var(--charcoal);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        /* ========== HEADER ========== */
+        .header {
+            background: var(--navy);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header__logo {
+            font-family: 'DM Serif Display', serif;
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        .header__logo span { color: var(--gold); }
+
+        .header__phone {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            transition: opacity 0.2s;
+        }
+
+        .header__phone:hover { opacity: 0.9; }
+
+        /* ========== HERO ========== */
+        .hero {
+            background: linear-gradient(rgba(27,45,69,0.75), rgba(27,45,69,0.8)),
+                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+            padding: 6rem 2rem;
+            text-align: center;
+            color: var(--white);
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            max-width: 700px;
+            line-height: 1.15;
+        }
+
+        .hero h1 span { color: var(--gold); }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 550px;
+            opacity: 0.95;
+        }
+
+        .hero__cta {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 1rem 2.5rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hero__cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212,168,67,0.4);
+        }
+
+        /* ========== TRUST BAR ========== */
+        .trust-bar {
+            background: var(--navy);
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .trust-bar__item {
+            color: var(--white);
+        }
+
+        .trust-bar__number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            display: block;
+        }
+
+        .trust-bar__label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-top: 0.25rem;
+        }
+
+        /* ========== SECTIONS ========== */
+        section { padding: 5rem 2rem; }
+
+        .section-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ========== SERVICES ========== */
+        .services { background: var(--cream); }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            transition: transform 0.2s;
+        }
+
+        .service-card:hover { transform: translateY(-4px); }
+
+        .service-card__icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-family: 'DM Serif Display', serif;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* ========== WHY US ========== */
+        .why-us {
+            background: var(--white);
+        }
+
+        .why-us__content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .why-us__image {
+            width: 100%;
+            border-radius: 8px;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+
+        .why-us__text h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.4rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .why-us__text p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .why-us__text ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .why-us__text ul li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #444;
+        }
+
+        .why-us__text ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        /* ========== TESTIMONIALS ========== */
+        .testimonials { background: var(--cream); }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border-left: 4px solid var(--gold);
+        }
+
+        .testimonial-card__stars {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .testimonial-card__author {
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        /* ========== PROCESS ========== */
+        .process { background: var(--white); }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .process-step__number {
+            width: 60px;
+            height: 60px;
+            background: var(--gold);
+            color: var(--navy);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .process-step h3 {
+            font-family: 'DM Serif Display', serif;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .process-step p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* ========== CTA / FORM ========== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy), var(--light-navy));
+            color: var(--white);
+        }
+
+        .cta-section .section-title { color: var(--white); }
+        .cta-section .section-subtitle { color: rgba(255,255,255,0.8); }
+
+        .cta-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .cta-form input,
+        .cta-form textarea {
+            padding: 0.85rem 1rem;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 4px;
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            font-size: 1rem;
+            font-family: 'Source Sans 3', sans-serif;
+            transition: border-color 0.2s;
+        }
+
+        .cta-form input::placeholder,
+        .cta-form textarea::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .cta-form input:focus,
+        .cta-form textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .cta-form .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .cta-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .cta-form button {
+            grid-column: 1 / -1;
+            background: var(--gold);
+            color: var(--navy);
+            border: none;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: opacity 0.2s;
+        }
+
+        .cta-form button:hover { opacity: 0.9; }
+
+        .cta-phone {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-phone a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: #111;
+            color: rgba(255,255,255,0.7);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer h4 {
+            font-family: 'DM Serif Display', serif;
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer a { color: var(--gold); text-decoration: none; }
+
+        .footer__areas {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .header { flex-direction: column; gap: 0.75rem; text-align: center; }
+            .hero { padding: 4rem 1.5rem; min-height: 60vh; }
+            .why-us__content { grid-template-columns: 1fr; }
+            .cta-form { grid-template-columns: 1fr; }
+            section { padding: 3.5rem 1.5rem; }
+        }
+
+        /* ========== ANIMATIONS ========== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate { animation: fadeInUp 0.6s ease-out forwards; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header__logo">Impressed <span>Concrete</span></div>
+        <a href="tel:08002335041" class="header__phone">📞 0800 233 5041</a>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Stunning Concrete Driveways <span>Built to Last</span> in Bury</h1>
+        <p>25 years transforming driveways across Greater Manchester. Patterned concrete that looks incredible and stands the test of time.</p>
+        <a href="#contact" class="hero__cta">Get Your Free Quote</a>
+    </section>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <div class="trust-bar__item">
+            <span class="trust-bar__number">25+</span>
+            <span class="trust-bar__label">Years Experience</span>
+        </div>
+        <div class="trust-bar__item">
+            <span class="trust-bar__number">4.7★</span>
+            <span class="trust-bar__label">Google Rating</span>
+        </div>
+        <div class="trust-bar__item">
+            <span class="trust-bar__number">Free</span>
+            <span class="trust-bar__label">No-Obligation Quotes</span>
+        </div>
+        <div class="trust-bar__item">
+            <span class="trust-bar__number">100%</span>
+            <span class="trust-bar__label">Satisfaction Guaranteed</span>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">What We Do</h2>
+            <p class="section-subtitle">From full driveway installations to decorative patios, we deliver concrete work you'll be proud of.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-card__icon">🏠</div>
+                    <h3>Impressed Concrete Driveways</h3>
+                    <p>Beautiful patterned concrete driveways that transform the front of your home. Choose from dozens of patterns and colours.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">🌿</div>
+                    <h3>Patios & Garden Paths</h3>
+                    <p>Create a stunning outdoor living space with impressed concrete patios and pathways that complement your garden.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">🪜</div>
+                    <h3>Steps & Entrance Features</h3>
+                    <p>Custom-built concrete steps and entrance features that add character and value to your property.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">🔧</div>
+                    <h3>Repairs & Resurfacing</h3>
+                    <p>Bring tired, worn concrete back to life with expert repair and resurfacing services across Bury.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="why-us">
+        <div class="container">
+            <div class="why-us__content">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Beautiful home exterior" class="why-us__image" loading="lazy">
+                <div class="why-us__text">
+                    <h3>Why Bury Homeowners Trust Simon &amp; His Team</h3>
+                    <p>With over 25 years in the trade, Simon and the Impressed Concrete team have built a reputation across Greater Manchester for quality work, fair prices, and leaving every site spotless.</p>
+                    <p>We're not a faceless company — when you call us, you speak to the people who'll actually be doing the work. That's why our customers keep coming back and recommending us to their neighbours.</p>
+                    <ul>
+                        <li>Over 25 years of hands-on experience</li>
+                        <li>Satisfaction guaranteed on every project</li>
+                        <li>Professional, polite workforce</li>
+                        <li>Sites left clean and tidy — every time</li>
+                        <li>Free, no-obligation quotes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <p class="section-subtitle">Don't just take our word for it — here's what real customers think.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-card__stars">★★★★★</div>
+                    <p>"Simon and his work force were brilliant. Did a great job, cleaned up, were all very polite. We are very pleased with our driveway and would strongly recommend."</p>
+                    <div class="testimonial-card__author">— Margaret O.</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-card__stars">★★★★★</div>
+                    <p>"The team were great, very professional and efficient. The job was completed and left very tidy, which is rare in my experience of builders."</p>
+                    <div class="testimonial-card__author">— Rachel T-L.</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-card__stars">★★★★★</div>
+                    <p>"They did an excellent job installing our concrete imprint driveway. Can't recommend Impressed enough — very knowledgeable and reliable."</p>
+                    <div class="testimonial-card__author">— Aaron D.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Getting your dream driveway is easier than you think.</p>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="process-step__number">1</div>
+                    <h3>Call Simon</h3>
+                    <p>Ring us for a free, no-obligation chat about your project. We'll answer any questions and arrange a convenient time to visit.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step__number">2</div>
+                    <h3>Site Visit & Quote</h3>
+                    <p>We measure up, show you pattern and colour options on-site, and give you a clear, honest quote — no hidden costs.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step__number">3</div>
+                    <h3>Professional Installation</h3>
+                    <p>Our experienced team transforms your driveway efficiently, leaving the site spotless. Satisfaction guaranteed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Contact Form -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Ready to Transform Your Driveway?</h2>
+            <p class="section-subtitle">Get in touch today for your free, no-obligation quote. We'll get back to you within 24 hours.</p>
+            <form class="cta-form" action="#" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <input type="email" name="email" placeholder="Email Address" class="full-width">
+                <input type="text" name="postcode" placeholder="Postcode" class="full-width">
+                <textarea name="message" placeholder="Tell us about your project..." class="full-width"></textarea>
+                <button type="submit">Send My Enquiry</button>
+            </form>
+            <div class="cta-phone">
+                <p>Prefer to talk? Call us now:</p>
+                <a href="tel:08002335041">0800 233 5041</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h4>Impressed Concrete</h4>
+        <p>Europa House, Barcroft St, Bury, Manchester BL9 5BT</p>
+        <p>📞 <a href="tel:08002335041">0800 233 5041</a> &nbsp;|&nbsp; ✉️ <a href="mailto:sales@impressed-concrete.co.uk">sales@impressed-concrete.co.uk</a></p>
+        <p class="footer__areas">Covering Bury, Bolton, Rochdale, Whitefield, Prestwich, Radcliffe & Greater Manchester</p>
+    </footer>
+
+    <!-- Smooth scroll -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+
+</body>
+</html>

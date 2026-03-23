@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moor Digital Marketing | Conversational AI & Marketing Automation</title>
+  <meta name="description" content="Moor Digital Marketing helps businesses grow with AI-powered chatbots, marketing automation, and CRM solutions. Automate your conversations, nurture leads, and close more sales.">
+  <link rel="canonical" href="https://moordigitalmarketing.com/">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Moor Digital Marketing | Conversational AI & Marketing Automation">
+  <meta property="og:description" content="Moor Digital Marketing helps businesses grow with AI-powered chatbots, marketing automation, and CRM solutions. Automate your conversations, nurture leads, and close more sales.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://moordigitalmarketing.com/">
+
+  <!-- Structured Data (Organization Schema) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Moor Digital Marketing",
+    "url": "https://moordigitalmarketing.com/",
+    "description": "AI-powered marketing automation for businesses that want to grow smarter.",
+    "logo": "https://moordigitalmarketing.com/logo.png",
+    "sameAs": [
+      "https://www.facebook.com/moordigitalmarketing",
+      "https://www.linkedin.com/company/moordigitalmarketing",
+      "https://www.instagram.com/moordigitalmarketing"
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ============================================
+       HOMEPAGE-SPECIFIC STYLES
+       ============================================ */
+
+    /* ========== HERO SECTION ========== */
+    .hero {
+      padding: 200px 0 100px;
+      background: linear-gradient(135deg, var(--indigo-900) 0%, var(--indigo-800) 50%, #1f0d47 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(90, 62, 200, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: white;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 32px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 32px;
+      width: fit-content;
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      background: var(--success);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--indigo-300), var(--coral-400));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-chat {
+      perspective: 1000px;
+    }
+
+    .chat-window {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(15, 23, 36, 0.15);
+      overflow: hidden;
+    }
+
+    .chat-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      background: var(--indigo-50);
+      border-bottom: 1px solid var(--indigo-100);
+    }
+
+    .chat-avatar {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--indigo-400), var(--coral-500));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .chat-header-info h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--indigo-900);
+      margin: 0;
+    }
+
+    .chat-header-info span {
+      font-size: 0.8rem;
+      color: var(--success);
+      display: block;
+    }
+
+    .chat-body {
+      padding: 20px;
+      min-height: auto;
+      overflow-y: visible;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .chat-msg {
+      display: flex;
+      max-width: 80%;
+      word-wrap: break-word;
+    }
+
+    .chat-msg.bot {
+      align-self: flex-start;
+      background: var(--indigo-100);
+      color: var(--indigo-900);
+      padding: 12px 16px;
+      border-radius: 0 12px 12px 12px;
+      font-size: 0.95rem;
+    }
+
+    .chat-msg.user {
+      align-self: flex-end;
+      background: var(--indigo-600);
+      color: white;
+      padding: 12px 16px;
+      border-radius: 12px 0 12px 12px;
+      font-size: 0.95rem;
+    }
+
+    .chat-input-bar {
+      display: flex;
+      gap: 12px;
+      padding: 12px 16px;
+      background: var(--slate-50);
+      border-top: 1px solid var(--slate-100);
+    }
+
+    .chat-input-bar input {
+      flex: 1;
+      border: 1px solid var(--slate-200);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      background: white;
+      cursor: not-allowed;
+      color: var(--slate-400);
+    }
+
+    .chat-input-bar input::placeholder {
+      color: var(--slate-400);
+    }
+
+    .chat-send {
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: var(--indigo-600);
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .chat-send:hover {
+      background: var(--indigo-700);
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .hero .container {
+        grid-template-columns: 1fr;
+        padding-top: 40px;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-chat {
+        display: none;
+      }
+    }
+
+    /* ========== SOCIAL PROOF SECTION ========== */
+    .social-proof {
+      padding: 80px 0;
+      background: var(--slate-50);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+    }
+
+    .proof-item {
+      text-align: center;
+    }
+
+    .proof-item h3 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--indigo-600), var(--coral-500));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .proof-item p {
+      color: var(--slate-600);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .proof-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+
+      .proof-item h3 {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* ========== HOW IT WORKS — TIMELINE ========== */
+    .how-it-works {
+      padding: 100px 0;
+    }
+
+    .how-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .how-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 760px;
+      margin: 0 auto;
+      padding-left: 100px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 40px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--indigo-200), var(--coral-200), var(--indigo-200));
+    }
+
+    .timeline-step {
+      position: relative;
+      margin-bottom: 48px;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: all 0.7s ease;
+    }
+
+    .timeline-step.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .timeline-step:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-num {
+      position: absolute;
+      left: -60px;
+      top: 24px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: white;
+      z-index: 2;
+      box-shadow: 0 4px 15px rgba(90, 62, 200, 0.3);
+    }
+
+    .timeline-num.indigo {
+      background: linear-gradient(135deg, var(--indigo-500), var(--indigo-400));
+    }
+
+    .timeline-num.coral {
+      background: linear-gradient(135deg, var(--coral-500), var(--coral-400));
+      box-shadow: 0 4px 15px rgba(255, 107, 74, 0.3);
+    }
+
+    .timeline-card {
+      background: var(--white);
+      border: 1px solid var(--slate-100);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+
+    .timeline-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .timeline-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin-bottom: 12px;
+    }
+
+    .timeline-card p {
+      color: var(--slate-500);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .step-tag {
+      display: inline-block;
+      padding: 6px 12px;
+      background: var(--slate-100);
+      color: var(--slate-700);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    @media (max-width: 768px) {
+      .timeline {
+        padding-left: 70px;
+      }
+
+      .timeline::before {
+        left: 25px;
+      }
+
+      .timeline-num {
+        left: -45px;
+        width: 44px;
+        height: 44px;
+        font-size: 1rem;
+      }
+
+      .timeline-card {
+        padding: 24px;
+      }
+    }
+
+    /* ========== SERVICES GRID ========== */
+    .services {
+      padding: 100px 0;
+      background: var(--slate-50);
+    }
+
+    .services-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .services-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 32px 28px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--slate-100);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--indigo-500), var(--coral-500));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--indigo-100);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .service-icon.indigo { background: var(--indigo-100); }
+    .service-icon.coral { background: var(--coral-100); }
+    .service-icon.green { background: #e6f9f1; }
+
+    .service-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin-bottom: 8px;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--slate-500);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ========== RESULTS SECTION ========== */
+    .results {
+      padding: 100px 0;
+      background: linear-gradient(160deg, var(--slate-900) 0%, #1a1040 100%);
+      color: white;
+    }
+
+    .results .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .results .section-label {
+      color: var(--coral-400);
+    }
+
+    .results .section-label::before {
+      background: var(--coral-400);
+    }
+
+    .results-content h2 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: white;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .results-content > p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 32px;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    .stat-boxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .stat-box {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+
+    .stat-box h4 {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--coral-400), var(--coral-300));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 4px;
+    }
+
+    .stat-box p {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.88rem;
+    }
+
+    .code-terminal {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #a8e6cf;
+      padding: 24px;
+      border-radius: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      overflow-x: auto;
+    }
+
+    .code-terminal-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .code-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .code-dot:nth-child(1) { background: #ff5f56; }
+    .code-dot:nth-child(2) { background: #ffbd2e; }
+    .code-dot:nth-child(3) { background: #27c93f; }
+
+    .code-filename {
+      margin-left: 12px;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.8rem;
+    }
+
+    .code-line {
+      line-height: 2;
+    }
+
+    .code-comment { color: rgba(255, 255, 255, 0.3); }
+    .code-key { color: #a8e6cf; }
+    .code-value { color: var(--coral-300); }
+    .code-string { color: #ffd580; }
+
+    @media (max-width: 768px) {
+      .results .container {
+        grid-template-columns: 1fr;
+      }
+
+      .results-content h2 {
+        font-size: 2rem;
+      }
+    }
+
+    /* ========== TESTIMONIALS SECTION ========== */
+    .testimonials {
+      padding: 100px 0;
+      background: var(--white);
+    }
+
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .testimonials-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 32px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--slate-100);
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      border-color: var(--indigo-200);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+
+    .stars {
+      color: #f5a623;
+      margin-bottom: 16px;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-text {
+      color: var(--slate-700);
+      margin-bottom: 24px;
+      line-height: 1.8;
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--indigo-400), var(--coral-500));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .author-info h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--slate-900);
+      margin: 0;
+    }
+
+    .author-info p {
+      font-size: 0.8rem;
+      color: var(--slate-500);
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ========== CTA SECTION ========== */
+    .cta-section {
+      padding: 100px 0;
+      background: var(--slate-50);
+      text-align: center;
+    }
+
+    .cta-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: var(--indigo-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+
+    .cta-section h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .cta-section h2 .coral-text {
+      color: var(--coral-500);
+    }
+
+    .cta-section > .container > p {
+      color: var(--slate-500);
+      font-size: 1.1rem;
+      margin-bottom: 36px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .cta-section h2 {
+        font-size: 2rem;
+      }
+    }
+
+    /* ========== CONTACT SECTION ========== */
+    .contact {
+      padding: 100px 0;
+    }
+
+    .contact .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: flex-start;
+    }
+
+    .contact-info {
+      padding-top: 20px;
+    }
+
+    .contact-info .section-subtitle {
+      margin-bottom: 40px;
+    }
+
+    .contact-method {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .contact-method-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--indigo-100);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-method h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--slate-900);
+      margin-bottom: 4px;
+    }
+
+    .contact-method p {
+      color: var(--slate-600);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .contact-form {
+      background: var(--slate-50);
+      padding: 40px;
+      border-radius: 16px;
+      border: 1px solid var(--slate-100);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--slate-900);
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 12px 16px;
+      border: 1px solid var(--slate-200);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      background: white;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--indigo-500);
+      box-shadow: 0 0 0 3px rgba(90, 62, 200, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contact-form .btn-primary {
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .contact .container {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ========== SCROLL ANIMATIONS ========== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: all 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">M</div>
+        MOOR
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li class="nav-dropdown">
+          <a href="#">Services</a>
+          <div class="dropdown-menu">
+            <a href="ai-chatbots.html">AI Chatbots</a>
+            <a href="email-sms-automation.html">Email &amp; SMS Automation</a>
+            <a href="crm-pipeline.html">CRM &amp; Pipeline</a>
+            <a href="landing-pages-funnels.html">Landing Pages &amp; Funnels</a>
+            <a href="workflow-automation.html">Workflow Automation</a>
+            <a href="analytics-optimisation.html">Analytics &amp; Optimisation</a>
+          </div>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta">Let's Talk</a></li>
+      </ul>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse"></span>
+          Now powered by AI agents
+        </div>
+        <h1>
+          Your customers are talking.<br>
+          <span class="gradient-text">Is your business listening?</span>
+        </h1>
+        <p>
+          We build AI-powered conversations and marketing automation that capture leads, nurture relationships, and close sales &mdash; while you focus on running your business.
+        </p>
+        <div class="hero-buttons">
+          <a href="booking.html" class="btn-primary">
+            Start a Conversation
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5-5-5-5"/></svg>
+          </a>
+          <a href="#how-it-works" class="btn-secondary">
+            See How It Works
+          </a>
+        </div>
+      </div>
+      <div class="hero-chat">
+        <div class="chat-window">
+          <div class="chat-header">
+            <div class="chat-avatar">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" transform="scale(0.9)"/></svg>
+            </div>
+            <div class="chat-header-info">
+              <h4>Moor AI Assistant</h4>
+              <span>Online now</span>
+            </div>
+          </div>
+          <div class="chat-body">
+            <div class="chat-msg bot">
+              Hey there! I noticed you're interested in growing your business. What's your biggest challenge right now?
+            </div>
+            <div class="chat-msg user">
+              We're losing leads because we can't follow up fast enough.
+            </div>
+            <div class="chat-msg bot">
+              I hear that a lot! Our automation can respond to new leads in under 60 seconds &mdash; via text, email, or chat. Want me to show you how?
+            </div>
+            <div class="chat-msg user">
+              Yes, that sounds exactly what we need!
+            </div>
+          </div>
+          <div class="chat-input-bar">
+            <input type="text" placeholder="Type your message..." disabled>
+            <button class="chat-send" aria-label="Send">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13" transform="scale(0.7)"/><polygon points="22 2 15 22 11 13 2 9 22 2" transform="scale(0.7)"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SOCIAL PROOF ========== -->
+  <section class="social-proof">
+    <div class="container">
+      <div class="proof-grid">
+        <div class="proof-item fade-in">
+          <h3>500+</h3>
+          <p>Conversations automated daily</p>
+        </div>
+        <div class="proof-item fade-in">
+          <h3>3.2x</h3>
+          <p>Average lead conversion lift</p>
+        </div>
+        <div class="proof-item fade-in">
+          <h3>&lt;60s</h3>
+          <p>Average response time</p>
+        </div>
+        <div class="proof-item fade-in">
+          <h3>97%</h3>
+          <p>Client satisfaction rate</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="how-header">
+        <div class="section-label">How It Works</div>
+        <h2 class="section-title">From first hello to closed deal.</h2>
+        <p class="section-subtitle">
+          Our conversational automation framework turns strangers into customers through smart, personalised journeys.
+        </p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-step">
+          <div class="timeline-num indigo">1</div>
+          <div class="timeline-card">
+            <h3>Capture &amp; Connect</h3>
+            <p>AI chatbots on your site, social ads, and landing pages engage visitors the moment they arrive &mdash; qualifying leads through natural conversation instead of boring forms.</p>
+            <span class="step-tag">chatbot &middot; landing pages &middot; forms</span>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-num coral">2</div>
+          <div class="timeline-card">
+            <h3>Nurture &amp; Automate</h3>
+            <p>Smart email and SMS sequences fire automatically based on behaviour. Your CRM stays updated, follow-ups happen instantly, and no lead falls through the cracks.</p>
+            <span class="step-tag">email &middot; SMS &middot; CRM workflows</span>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-num indigo">3</div>
+          <div class="timeline-card">
+            <h3>Engage &amp; Convert</h3>
+            <p>Personalised conversations guide prospects toward booking, buying, or scheduling. AI handles objections and FAQs 24/7, escalating to your team when ready.</p>
+            <span class="step-tag">AI agents &middot; booking &middot; payments</span>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-num coral">4</div>
+          <div class="timeline-card">
+            <h3>Retain &amp; Grow</h3>
+            <p>Post-sale automation keeps customers engaged with review requests, loyalty offers, and re-engagement campaigns that drive repeat business and referrals.</p>
+            <span class="step-tag">reviews &middot; retention &middot; referrals</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-header">
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">Built for businesses that want to grow smarter.</h2>
+        <p class="section-subtitle">
+          Every service is designed to automate the conversations that drive revenue &mdash; so your team can focus on what matters.
+        </p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <div class="service-icon indigo">
+            <svg width="28" height="28" fill="none" stroke="var(--indigo-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>AI Chatbots</h3>
+          <p>Intelligent chat agents that greet visitors, answer questions, qualify leads, and book appointments &mdash; all in natural conversation, 24 hours a day.</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon coral">
+            <svg width="28" height="28" fill="none" stroke="var(--coral-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h3>Email &amp; SMS Automation</h3>
+          <p>Behaviour-triggered sequences that nurture leads with the right message at the right time. No manual follow-up needed &mdash; your pipeline moves itself.</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon green">
+            <svg width="28" height="28" fill="none" stroke="#22c98d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>CRM &amp; Pipeline Management</h3>
+          <p>A single source of truth for every lead and customer. Automated tagging, stage tracking, and task assignment keep your sales process running smoothly.</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon indigo">
+            <svg width="28" height="28" fill="none" stroke="var(--indigo-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Landing Pages &amp; Funnels</h3>
+          <p>High-converting pages built to capture attention and drive action. Paired with smart funnels that guide prospects from click to customer.</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon coral">
+            <svg width="28" height="28" fill="none" stroke="var(--coral-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Workflow Automation</h3>
+          <p>Connect your tools, trigger actions automatically, and eliminate repetitive tasks. From Slack alerts to CRM updates &mdash; fully hands-free.</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon green">
+            <svg width="28" height="28" fill="none" stroke="#22c98d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Analytics &amp; Optimisation</h3>
+          <p>See exactly what's working. Track conversations, conversion rates, and campaign performance with dashboards that tell you where to double down.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RESULTS ========== -->
+  <section class="results" id="results">
+    <div class="container">
+      <div class="results-content fade-in">
+        <div class="section-label">Real Results</div>
+        <h2>Automation that pays for itself.</h2>
+        <p>
+          Our clients see measurable growth within weeks, not months. Here's what happens when conversations are automated and leads never slip away.
+        </p>
+        <div class="stat-boxes">
+          <div class="stat-box">
+            <h4>340%</h4>
+            <p>Increase in qualified leads</p>
+          </div>
+          <div class="stat-box">
+            <h4>67%</h4>
+            <p>Reduction in response time</p>
+          </div>
+          <div class="stat-box">
+            <h4>4.8x</h4>
+            <p>ROI on automation spend</p>
+          </div>
+          <div class="stat-box">
+            <h4>28hrs</h4>
+            <p>Saved per week per team</p>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in">
+        <div class="code-terminal">
+          <div class="code-terminal-header">
+            <div class="code-dot"></div>
+            <div class="code-dot"></div>
+            <div class="code-dot"></div>
+            <span class="code-filename">automation_results.json</span>
+          </div>
+          <div class="code-line code-comment">// Your business, automated</div>
+          <div class="code-line">{</div>
+          <div class="code-line">&nbsp;&nbsp;<span class="code-key">"leads_captured"</span>: <span class="code-value">2,847</span>,</div>
+          <div class="code-line">&nbsp;&nbsp;<span class="code-key">"auto_responses"</span>: <span class="code-value">12,340</span>,</div>
+          <div class="code-line">&nbsp;&nbsp;<span class="code-key">"avg_response_time"</span>: <span class="code-string">"47 seconds"</span>,</div>
+          <div class="code-line">&nbsp;&nbsp;<span class="code-key">"appointments_booked"</span>: <span class="code-value">684</span>,</div>
+          <div class="code-line">&nbsp;&nbsp;<span class="code-key">"deals_closed"</span>: <span class="code-value">312</span>,</div>
+          <div class="code-line">&nbsp;&nbsp;<span class="code-key">"revenue_generated"</span>: <span class="code-string">"$487,200"</span>,</div>
+          <div class="code-line">&nbsp;&nbsp;<span class="code-key">"human_effort"</span>: <span class="code-string">"minimal"</span></div>
+          <div class="code-line">}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="testimonials-header">
+        <div class="section-label">What Our Clients Say</div>
+        <h2 class="section-title">Conversations that close deals.</h2>
+        <p class="section-subtitle">
+          Don't take our word for it &mdash; hear from the businesses that transformed their growth with Moor.
+        </p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-in">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">
+            "A total game-changer for our business. The AI chatbot handles enquiries around the clock, and the automated follow-ups mean we never lose a lead. We've tripled our conversions in three months."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">HB</div>
+            <div class="author-info">
+              <h4>Harvey Beaman</h4>
+              <p>Co-founder, Inverse Promos</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">
+            "We used to spend hours on manual follow-ups. Moor automated everything &mdash; emails, texts, even booking calls. It's like having an entire sales team working 24/7 without the overhead."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SC</div>
+            <div class="author-info">
+              <h4>Sarah Chen</h4>
+              <p>Owner, Bright Path Dental</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">
+            "The CRM integration tied everything together. We finally have visibility into our pipeline, and the automation ensures every lead gets the attention they deserve. Revenue is up 40% year-over-year."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MJ</div>
+            <div class="author-info">
+              <h4>Marcus Johnson</h4>
+              <p>Director, Summit Home Services</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA SECTION ========== -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-icon">
+        <svg width="28" height="28" fill="none" stroke="var(--indigo-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <p class="section-subtitle" style="margin: 0 auto 12px; text-align: center;">Ready to automate your growth?</p>
+      <h2>Let's start a conversation<br>about <span class="coral-text">your</span> business.</h2>
+      <p>
+        Book a free strategy call and we'll map out exactly how AI and automation can transform your lead generation, follow-up, and sales process.
+      </p>
+      <div class="cta-buttons">
+        <a href="booking.html" class="btn-primary large">
+          Book Free Strategy Call
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5-5-5-5"/></svg>
+        </a>
+        <a href="#services" class="btn-outline">
+          Explore Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-info">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-title">Say hello.</h2>
+        <p class="section-subtitle">
+          Ready to stop losing leads and start growing smarter? Drop us a message or book a call &mdash; we typically respond within the hour.
+        </p>
+        <div class="contact-method">
+          <div class="contact-method-icon">
+            <svg width="20" height="20" fill="none" stroke="var(--indigo-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <h4>Email</h4>
+            <p>hello@moordigitalmarketing.com</p>
+          </div>
+        </div>
+        <div class="contact-method">
+          <div class="contact-method-icon">
+            <svg width="20" height="20" fill="none" stroke="var(--indigo-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" transform="scale(0.85)"/></svg>
+          </div>
+          <div>
+            <h4>Phone</h4>
+            <p>Available on booking</p>
+          </div>
+        </div>
+        <div class="contact-method">
+          <div class="contact-method-icon">
+            <svg width="20" height="20" fill="none" stroke="var(--indigo-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" transform="scale(0.85)"/><polyline points="12 6 12 12 16 14" transform="scale(0.85)"/></svg>
+          </div>
+          <div>
+            <h4>Response Time</h4>
+            <p>Usually within 1 hour</p>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="John" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Smith" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="john@company.com" required>
+        </div>
+        <div class="form-group">
+          <label for="interest">What are you most interested in?</label>
+          <select id="interest" name="interest" required>
+            <option value="" disabled selected>Choose a service...</option>
+            <option value="ai-chatbot">AI Chatbot / Conversational AI</option>
+            <option value="email-sms">Email & SMS Automation</option>
+            <option value="crm">CRM & Pipeline Setup</option>
+            <option value="landing-pages">Landing Pages & Funnels</option>
+            <option value="automation-package">Full Automation Package</option>
+            <option value="exploring">Not sure yet — just exploring</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Tell us about your business</label>
+          <textarea id="message" name="message" placeholder="What does your business do, and what's your biggest challenge right now?" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">
+          Send Message
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13" transform="scale(0.7)"/><polygon points="22 2 15 22 11 13 2 9 22 2" transform="scale(0.7)"/></svg>
+        </button>
+      </form>
+      <div id="formSuccess" class="form-success">
+        <h3>Message Sent!</h3>
+        <p>Thanks for reaching out. We'll be in touch within the hour.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">M</div>
+            MOOR
+          </a>
+          <p>
+            AI-powered marketing automation for businesses that want to grow smarter. We build the conversations that close deals.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="ai-chatbots.html">AI Chatbots</a></li>
+            <li><a href="email-sms-automation.html">Email &amp; SMS</a></li>
+            <li><a href="crm-pipeline.html">CRM Setup</a></li>
+            <li><a href="landing-pages-funnels.html">Landing Pages</a></li>
+            <li><a href="workflow-automation.html">Workflow Automation</a></li>
+            <li><a href="analytics-optimisation.html">Analytics &amp; Optimisation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#results">Case Studies</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="booking.html">Book a Call</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="automation-audit.html">Free Automation Audit</a></li>
+            <li><a href="roi-calculator.html">ROI Calculator</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Moor Digital Marketing. All rights reserved.</span>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script src="main.js"></script>
+
+  <script>
+    // Homepage-specific: observe timeline steps + service cards
+    document.addEventListener('DOMContentLoaded', function() {
+      // Chat message entrance animations
+      const chatMessages = document.querySelectorAll('.chat-msg');
+      chatMessages.forEach((msg, index) => {
+        msg.style.opacity = '0';
+        msg.style.transform = 'translateY(10px)';
+        setTimeout(() => {
+          msg.style.transition = 'all 0.6s ease';
+          msg.style.opacity = '1';
+          msg.style.transform = 'translateY(0)';
+        }, index * 300);
+      });
+
+      // Observe timeline steps
+      const timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.timeline-step').forEach(el => timelineObserver.observe(el));
+    });
+  </script>
+
+</body>
+</html>
